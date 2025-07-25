@@ -1,46 +1,191 @@
-# Getting Started with Create React App
+# AfriLectrical React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive electrical engineering consultancy website built with React, TypeScript, and modern web technologies. This project showcases AfriLectrical's services across Africa, featuring interactive components, responsive design, and professional portfolio presentation.
 
-## Available Scripts
+## 🏗️ Project Overview
 
-In the project directory, you can run:
+AfriLectrical React is a modern, responsive web application that serves as the digital presence for AfriLectrical Consulting Engineers. The website features:
 
-### `npm start`
+- **Multi-page Architecture**: 18+ pages including solutions, services, and interactive demos
+- **Component Library**: 40+ reusable UI components with consistent design system
+- **Responsive Design**: Mobile-first approach with optimized user experience
+- **Interactive Features**: Animations, carousels, parallax effects, and dynamic content
+- **Professional Portfolio**: Showcasing electrical engineering projects and expertise
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🚀 Technology Stack
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Frontend**: React 19.1.0 with TypeScript
+- **Styling**: Styled Components with comprehensive theming system
+- **Animations**: Framer Motion for smooth transitions and interactions
+- **Routing**: React Router DOM v7.6.3
+- **Build Tools**: Create React App with modern toolchain
+- **UI Components**: Custom component library with Material Design principles
 
-### `npm test`
+## 📁 Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+src/
+├── components/           # Reusable React components
+│   ├── ui/              # UI component library
+│   ├── shared/          # Shared components
+│   └── *.tsx            # Page-specific components
+├── pages/               # Application pages
+├── styles/              # Global styles and themes
+├── theme.ts             # Design system and theme configuration
+└── App.tsx              # Main application component
+```
 
-### `npm run build`
+## 🛠️ Available Scripts
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Development
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+# Install dependencies
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Start development server
+npm start
+```
 
-### `npm run eject`
+Runs the app in development mode at [http://localhost:3000](http://localhost:3000)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Production
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Build for production
+npm run build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Creates optimized production build in the `build` folder
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Testing
 
-## Learn More
+```bash
+# Run tests
+npm test
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Launches the test runner in interactive watch mode
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🎨 Design System
+
+The project includes a comprehensive design system with:
+
+- **Color Palette**: Primary (#e31e24), secondary, accent colors with variations
+- **Typography**: Inter font family with responsive scaling
+- **Spacing**: Consistent 4px-based spacing system
+- **Components**: 40+ styled components with theme integration
+- **Breakpoints**: Mobile-first responsive design breakpoints
+
+## 📱 Pages & Features
+
+### Main Pages
+- **Home**: Hero section with company overview and key services
+- **About**: Company history, mission, and team information
+- **Services**: Detailed service offerings with interactive tabs
+- **Projects**: Portfolio of completed electrical engineering projects
+- **Contact**: Contact forms and company information
+- **Careers**: Job opportunities and company culture
+
+### Solution Pages
+- **Buildings**: Smart building electrical systems
+- **Renewable Energy**: Solar and sustainable energy solutions
+- **Industry**: Industrial automation and control systems
+- **Risk & Safety**: Electrical safety and compliance services
+- **Transmission & Distribution**: Power grid infrastructure
+- **Transportation & Mobility**: EV charging and transport electrical systems
+- **Urban Planning**: City-wide electrical infrastructure planning
+
+### Demo Pages
+- **Components Demo**: Showcase of UI component library
+- **Interactive Features**: Advanced component demonstrations
+- **UI Showcase**: Design system and styling examples
+
+## 🔧 Component Library
+
+The project includes a comprehensive UI component library:
+
+### Form Components
+- Input, Dropdown, Slider, Switch, Tabs
+- Form validation and accessibility features
+
+### Feedback Components
+- Toast notifications, Modals, Tooltips
+- Progress indicators and loading states
+
+### Navigation Components
+- Pagination, Accordion, Breadcrumbs
+- Responsive navigation patterns
+
+### Display Components
+- Cards, Badges, Typography
+- Image optimization and parallax effects
+
+### Interactive Components
+- Carousel, Animated buttons, Scroll reveal
+- Smooth animations and transitions
+
+## 🌍 Deployment
+
+The project is configured for static deployment and can be hosted on:
+
+- **Netlify**: Direct Git integration
+- **Vercel**: Optimized React deployments
+- **GitHub Pages**: Free static hosting
+- **AWS S3**: Scalable cloud hosting
+
+Build files are optimized and include:
+- Minified JavaScript and CSS
+- Code splitting for optimal loading
+- Progressive web app features
+
+## 🛡️ Security & Performance
+
+- **Build Optimization**: Code splitting and tree shaking
+- **Image Optimization**: Lazy loading and responsive images
+- **Security**: No exposed sensitive data or credentials
+- **Performance**: Lighthouse-optimized scoring
+- **Accessibility**: WCAG compliant components
+
+## 📈 Recent Updates
+
+### Build Fixes (Latest)
+- ✅ Fixed TypeScript compilation errors
+- ✅ Resolved styled components import issues
+- ✅ Fixed theme interface mismatches
+- ✅ Corrected component prop types
+- ✅ Successful production build generation
+
+### Known Issues
+- Minor ESLint warnings for unused variables (non-breaking)
+- Development dependency security advisories (dev-only, not production)
+
+## 🔍 Development Notes
+
+### Theme System
+The theme system provides consistent styling across all components:
+- Colors, typography, spacing, and breakpoints
+- Dark/light mode support ready
+- Comprehensive TypeScript integration
+
+### Component Guidelines
+- All components follow consistent naming conventions
+- Props interfaces are well-defined with TypeScript
+- Responsive design patterns are implemented
+- Accessibility features are included
+
+## 📞 Support
+
+For development support or questions:
+- Review component documentation in `/md` directory
+- Check the improvements log for enhancement opportunities
+- Follow TypeScript best practices for component development
+
+## 🚀 Getting Started
+
+1. **Clone the repository**
+2. **Install dependencies**: `npm install`
+3. **Start development**: `npm start`
+4. **Build for production**: `npm run build`
+
+The application will be available at `http://localhost:3000` in development mode.

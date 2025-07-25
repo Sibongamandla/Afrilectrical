@@ -18,6 +18,10 @@
 .env.test.local
 .env.production.local
 
+# deployment and tools
+.vercel/
+.claude/
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

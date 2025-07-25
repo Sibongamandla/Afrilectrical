@@ -1,0 +1,82 @@
+<svg width="400" height="600" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="towerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2C3E50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34495E;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="400" height="600" fill="url(#skyGradient)"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="550" width="400" height="50" fill="#2E7D32"/>
+  
+  <!-- Main tower structure -->
+  <g fill="url(#towerGradient)" stroke="#1A252F" stroke-width="2">
+    <!-- Base -->
+    <polygon points="150,550 250,550 240,500 160,500" />
+    
+    <!-- Tower legs -->
+    <polygon points="160,500 170,450 180,400 185,350 190,300 195,250 200,200 205,150 210,100 215,50 220,20 180,20 175,50 170,100 165,150 160,200 155,250 150,300 145,350 140,400 130,450 140,500" />
+    <polygon points="240,500 230,450 220,400 215,350 210,300 205,250 200,200 195,150 190,100 185,50 180,20 220,20 225,50 230,100 235,150 240,200 245,250 250,300 255,350 260,400 270,450 260,500" />
+    
+    <!-- Cross beams -->
+    <rect x="140" y="480" width="120" height="4" />
+    <rect x="145" y="440" width="110" height="4" />
+    <rect x="150" y="400" width="100" height="4" />
+    <rect x="155" y="360" width="90" height="4" />
+    <rect x="160" y="320" width="80" height="4" />
+    <rect x="165" y="280" width="70" height="4" />
+    <rect x="170" y="240" width="60" height="4" />
+    <rect x="175" y="200" width="50" height="4" />
+    <rect x="180" y="160" width="40" height="4" />
+    <rect x="185" y="120" width="30" height="4" />
+    <rect x="190" y="80" width="20" height="4" />
+    
+    <!-- Diagonal supports -->
+    <line x1="160" y1="500" x2="200" y2="450" stroke-width="3"/>
+    <line x1="240" y1="500" x2="200" y2="450" stroke-width="3"/>
+    <line x1="165" y1="450" x2="200" y2="400" stroke-width="3"/>
+    <line x1="235" y1="450" x2="200" y2="400" stroke-width="3"/>
+    <line x1="170" y1="400" x2="200" y2="350" stroke-width="3"/>
+    <line x1="230" y1="400" x2="200" y2="350" stroke-width="3"/>
+  </g>
+  
+  <!-- Power lines -->
+  <g stroke="#FF6B35" stroke-width="3" fill="none">
+    <!-- Left side lines -->
+    <path d="M 50 200 Q 100 210 150 200" />
+    <path d="M 50 220 Q 100 230 150 220" />
+    <path d="M 50 240 Q 100 250 150 240" />
+    
+    <!-- Right side lines -->
+    <path d="M 250 200 Q 300 210 350 200" />
+    <path d="M 250 220 Q 300 230 350 220" />
+    <path d="M 250 240 Q 300 250 350 240" />
+  </g>
+  
+  <!-- Insulators -->
+  <g fill="#8B4513">
+    <ellipse cx="150" cy="200" rx="8" ry="15" />
+    <ellipse cx="150" cy="220" rx="8" ry="15" />
+    <ellipse cx="150" cy="240" rx="8" ry="15" />
+    <ellipse cx="250" cy="200" rx="8" ry="15" />
+    <ellipse cx="250" cy="220" rx="8" ry="15" />
+    <ellipse cx="250" cy="240" rx="8" ry="15" />
+  </g>
+  
+  <!-- Warning signs -->
+  <g>
+    <polygon points="190,520 210,520 205,500 195,500" fill="#FFD700" stroke="#FF0000" stroke-width="2"/>
+    <text x="200" y="515" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#FF0000">⚡</text>
+  </g>
+  
+  <!-- Company branding colors accent -->
+  <circle cx="200" cy="50" r="15" fill="#FF6B35" opacity="0.8"/>
+  <circle cx="200" cy="50" r="8" fill="#2E7D32" opacity="0.9"/>
+</svg>

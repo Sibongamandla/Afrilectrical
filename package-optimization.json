@@ -1,0 +1,52 @@
+{
+  "name": "afrilectrical-react-performance",
+  "description": "Performance optimization recommendations for AFRILECTRICAL React app",
+  "optimizations": {
+    "bundleAnalysis": {
+      "command": "npm install --save-dev webpack-bundle-analyzer",
+      "script": "\"analyze\": \"npm run build && npx webpack-bundle-analyzer build/static/js/*.js\""
+    },
+    "compressionRecommendations": {
+      "gzip": "Enable gzip compression on your server",
+      "brotli": "Enable Brotli compression for better compression ratios",
+      "headers": "Set proper cache headers for static assets"
+    },
+    "imageOptimization": {
+      "webp": "Use WebP format for modern browsers",
+      "avif": "Consider AVIF format for even better compression",
+      "responsive": "Implement responsive images with srcset",
+      "lazy": "Use intersection observer for lazy loading"
+    },
+    "codeOptimizations": {
+      "treeShaking": "Ensure tree shaking is enabled in production builds",
+      "splitting": "Implement proper code splitting for vendor libraries",
+      "preloading": "Preload critical resources",
+      "prefetching": "Prefetch likely navigation targets"
+    },
+    "performanceMetrics": {
+      "lcp": "Optimize Largest Contentful Paint < 2.5s",
+      "fid": "Optimize First Input Delay < 100ms",
+      "cls": "Optimize Cumulative Layout Shift < 0.1",
+      "fcp": "Optimize First Contentful Paint < 1.8s"
+    }
+  },
+  "recommendedPackages": {
+    "development": [
+      "webpack-bundle-analyzer",
+      "@craco/craco",
+      "compression-webpack-plugin"
+    ],
+    "runtime": [
+      "web-vitals",
+      "intersection-observer"
+    ]
+  },
+  "buildOptimizations": {
+    "production": {
+      "sourceMaps": false,
+      "minification": true,
+      "compression": true,
+      "splitting": true
+    }
+  }
+}
