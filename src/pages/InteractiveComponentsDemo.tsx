@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { 
-  Button, 
-  Container, 
-  Grid, 
-  Typography, 
+import {
+  Container,
+  Grid,
+  Typography,
   ServiceCard,
   ProjectGallery,
   TechSpecs,

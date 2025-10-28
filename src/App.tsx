@@ -7,7 +7,6 @@ import { HeroUIProvider } from '@heroui/react';
 import theme from './theme';
 import GlobalStyles from './styles/GlobalStyles';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import LoadingIndicator from './components/LoadingIndicator';
 import ErrorBoundary from './components/ErrorBoundary';
 import FontLoader from './components/FontLoader';
@@ -18,6 +17,7 @@ import { preloadCriticalImages } from './utils/imageOptimization';
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Projects = lazy(() => import('./pages/Projects'));
+const Portfolio = lazy(() => import('./pages/Portfolio'));
 const Stories = lazy(() => import('./pages/Stories'));
 const News = lazy(() => import('./pages/News'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -99,6 +99,7 @@ function App() {
                     {/* Main page routes */}
                     <Route path="/about" element={<About />} />
                     <Route path="/projects" element={<Projects />} />
+                    <Route path="/portfolio" element={<Portfolio />} />
                     <Route path="/stories" element={<Stories />} />
                     <Route path="/expertise" element={<BusinessExpertise />} />
                     <Route path="/news" element={<News />} />

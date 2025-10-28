@@ -9,8 +9,7 @@ import {
   ParallaxImage,
   AnimatedCounter,
   TabsContainer,
-  Carousel,
-  Icon
+  Carousel
 } from '../components/ui';
 
 const DemoSection = styled.section`

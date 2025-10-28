@@ -30,18 +30,6 @@ interface PageInfoProps {
   size?: 'small' | 'medium' | 'large';
 }
 
-const pulse = keyframes`
-  0% {
-    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
-  }
-`;
-
 const shimmer = keyframes`
   0% {
     background-position: -200px 0;

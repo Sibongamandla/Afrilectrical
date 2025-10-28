@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Card, CardBody, Image, Chip, Button } from '@heroui/react';
+import { Image } from '@heroui/react';
 import { ScrollReveal, AnimatedCounter } from '../components/ui';
 import { Icon } from '../components/ui';
 import AccreditationsSection from '../components/AccreditationsSection';
@@ -541,7 +541,7 @@ const About: React.FC = () => {
         <section className="py-24 px-8 lg:px-16 bg-gray-900 text-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">Our Impact by Numbers</h2>
+              <h2 className="text-4xl font-bold mb-6 text-white">Our Impact by Numbers</h2>
               <p className="text-xl text-gray-300">
                 Delivering professional engineering services across South Africa
               </p>

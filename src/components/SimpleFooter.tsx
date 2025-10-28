@@ -150,12 +150,6 @@ const SimpleFooter: React.FC = memo(() => {
             <CompanyDescription>
               A consulting engineering firm based in Pietermaritzburg, KwaZulu-Natal, specialising in delivering professional services across Electrical, Civil & Structural, Mechanical, Town Planning, and Security solutions. 100% black-owned and Level 1 BBBEE contributor.
             </CompanyDescription>
-            <ContactInfo>
-              <p>info@afrilectrical.co.za</p>
-              <p>+27 (0)33 340 0302</p>
-              <p>27 Cascade Crescent, Chasevalley</p>
-              <p>Pietermaritzburg, 3201</p>
-            </ContactInfo>
           </CompanySection>
           
           <FooterSection>

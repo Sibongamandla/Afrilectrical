@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    font-size: 16px;
+    font-size: 12.8px;
     scroll-behavior: smooth;
     scroll-padding-top: 60px; /* Account for fixed header */
     height: 100%;

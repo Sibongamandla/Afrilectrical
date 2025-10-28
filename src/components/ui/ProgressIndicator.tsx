@@ -2,16 +2,6 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 
-// Pulse animation for indeterminate progress
-const pulse = keyframes`
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-`;
-
 // Shimmer animation for loading bars
 const shimmer = keyframes`
   0% {

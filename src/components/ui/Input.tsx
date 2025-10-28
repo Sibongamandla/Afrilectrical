@@ -10,13 +10,6 @@ const shake = keyframes`
   20%, 40%, 60%, 80% { transform: translateX(2px); }
 `;
 
-// Pulse animation for focus state
-const pulse = keyframes`
-  0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
-  70% { box-shadow: 0 0 0 4px rgba(59, 130, 246, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
-`;
-
 interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
   label?: string;
   error?: string;

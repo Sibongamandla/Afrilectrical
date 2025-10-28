@@ -286,7 +286,7 @@ const Stories: React.FC = () => {
                 <div className="lg:col-span-2">
                   <Card className="overflow-hidden border border-gray-200 shadow-lg h-full">
                     <CardBody className="p-0 h-full">
-                      <div className="relative h-80">
+                      <div className="relative h-80 overflow-hidden">
                         <Image
                           src={featuredStory.image}
                           alt={featuredStory.title}
@@ -603,7 +603,7 @@ const Stories: React.FC = () => {
       {/* Newsletter Section */}
       <section className="py-24 px-8 lg:px-16 bg-gray-900 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-3xl font-bold mb-6">
+          <h3 className="text-3xl font-bold mb-6 text-white">
             Stay Updated with Our Latest Stories
           </h3>
           <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">

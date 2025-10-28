@@ -155,27 +155,27 @@ const ProjectLink = styled(Link)`
 const projects = [
   {
     id: 1,
-    category: 'Power Infrastructure',
-    title: 'National Grid Expansion',
-    description: 'A comprehensive power distribution network serving over 500,000 households across three major African cities.',
+    category: 'Electrical Consulting',
+    title: 'KwaZulu-Natal Rural Electrification',
+    description: 'Comprehensive rural electrification project bringing reliable power to 8,500 households across 15 communities in KwaZulu-Natal province.',
     image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=600&fit=crop',
-    link: '/projects/national-grid'
+    link: '/projects'
   },
   {
     id: 2,
-    category: 'Renewable Energy',
-    title: 'Solar Farm Complex',
-    description: 'Large-scale solar installation generating 50MW of clean energy for sustainable industrial development.',
-    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=600&fit=crop',
-    link: '/projects/solar-farm'
+    category: 'Civil & Structural Engineering',
+    title: 'Durban Commercial Complex',
+    description: 'Integrated electrical and security systems for a 20-story commercial development featuring smart building technology.',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop',
+    link: '/projects'
   },
   {
     id: 3,
-    category: 'Industrial Systems',
-    title: 'Manufacturing Automation',
-    description: 'Advanced electrical control systems for a major automotive manufacturing facility.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop',
-    link: '/projects/automation'
+    category: 'Mechanical Engineering',
+    title: 'Midlands Medical Centre',
+    description: 'Mission-critical electrical systems including emergency power supplies and specialized lighting for surgical suites.',
+    image: 'https://images.unsplash.com/photo-1516841273335-e39b37888115?w=800&h=600&fit=crop',
+    link: '/projects'
   }
 ];
 
@@ -191,7 +191,7 @@ const ProjectsSection: React.FC = memo(() => {
         <SectionHeader>
           <Title>Featured Projects</Title>
           <Subtitle>
-            Showcasing our expertise in electrical engineering across Africa
+            Showcasing our expertise in delivering professional engineering solutions across KwaZulu-Natal
           </Subtitle>
         </SectionHeader>
         

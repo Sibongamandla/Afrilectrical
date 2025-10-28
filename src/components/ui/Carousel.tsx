@@ -844,7 +844,7 @@ const HeroSlide: React.FC<{
       <div className="relative z-10 flex items-center h-full w-full">
         <div className="max-w-5xl mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           {/* Subtitle with consistent sizing */}
-          <div className="text-primary-300 text-sm sm:text-base md:text-lg font-medium mb-3 md:mb-4 opacity-90">
+          <div className="text-white text-sm sm:text-base md:text-lg font-medium mb-3 md:mb-4 opacity-90">
             {subtitle}
           </div>
           

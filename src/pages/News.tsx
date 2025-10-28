@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Card, CardBody, Image, Button, Input, Chip } from '@heroui/react';
+import { Card, CardBody, Image, Button, Input } from '@heroui/react';
 import { ScrollReveal } from '../components/ui';
 import { Icon } from '../components/ui';
 import CallToActionSection from '../components/shared/CallToActionSection';

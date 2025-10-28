@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import OptimizedImage from './ui/OptimizedImage';
 import ScrollReveal from './ui/ScrollReveal';
 import AnimatedCounter from './ui/AnimatedCounter';
 import Carousel, { HeroSlide } from './ui/Carousel';
@@ -47,114 +45,6 @@ const CarouselContainer = styled.div`
   width: 100%; /* Full width of the HeroContainer */
   height: 100%;
   z-index: 0;
-`;
-
-// Slide container for carousel items
-const SlideItem = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-`;
-
-// Background image for slides
-const SlideBackground = styled.div<{ bgImage: string }>`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(${props => props.bgImage});
-  background-size: cover;
-  background-position: center;
-`;
-
-// Video background with overlay
-const VideoBackground = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  overflow: hidden;
-`;
-
-const Video = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-
-
-// Content container with improved spacing and accessibility
-const ContentContainer = styled.div`
-  position: relative;
-  z-index: 2;
-  max-width: 1400px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 ${({ theme }) => theme.spacing.xl};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: ${({ theme }) => theme.colors.white};
-  height: 100%;
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: 0 ${({ theme }) => theme.spacing.lg};
-  }
-`;
-
-
-
-// Hero title with improved typography and accessibility
-const HeroTitle = styled(motion.h1)`
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
-  line-height: ${({ theme }) => theme.typography.lineHeight.tight};
-  margin-bottom: ${({ theme }) => theme.spacing.lg};
-  max-width: 20ch;
-  color: ${({ theme }) => theme.colors.white};
-`;
-
-// Hero subtitle with improved readability
-const HeroSubtitle = styled(motion.p)`
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  font-weight: ${({ theme }) => theme.typography.fontWeight.regular};
-  line-height: ${({ theme }) => theme.typography.lineHeight.relaxed};
-  margin-bottom: ${({ theme }) => theme.spacing.xl};
-  max-width: 60ch;
-  opacity: 0.9;
-`;
-
-// CTA button with improved accessibility and hover states
-const CtaButton = styled(motion(Link))`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: ${({ theme }) => `${theme.spacing.md} ${theme.spacing.xl}`};
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.white};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.semibold};
-  font-size: ${({ theme }) => theme.typography.fontSize.base};
-  border-radius: ${({ theme }) => theme.borderRadius.md};
-  text-decoration: none;
-  transition: all ${({ theme }) => theme.transitions.base};
-  box-shadow: ${({ theme }) => theme.shadows.md};
-  width: fit-content;
-  
-  &:hover, &:focus {
-    background-color: ${({ theme }) => theme.colors.primaryDark};
-    transform: translateY(-2px);
-    box-shadow: ${({ theme }) => theme.shadows.lg};
-  }
-  
-  &:focus {
-    outline: 2px solid ${({ theme }) => theme.colors.primaryLight};
-    outline-offset: 2px;
-  }
 `;
 
 // Stats container with improved layout and accessibility
@@ -239,21 +129,6 @@ const ScrollText = styled.span`
 `;
 
 const HeroSection: React.FC = () => {
-  
-  // Video fallback for mobile
-  const [isMobile, setIsMobile] = useState(false);
-  
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
   // Carousel slides with proper HeroSlide components using our custom electrical infrastructure images
   const carouselItems = [
     <HeroSlide
