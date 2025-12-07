@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Image } from '@heroui/react';
 import { ScrollReveal, AnimatedCounter } from '../components/ui';
@@ -6,87 +6,97 @@ import { Icon } from '../components/ui';
 import AccreditationsSection from '../components/AccreditationsSection';
 import CallToActionSection from '../components/shared/CallToActionSection';
 
-// Team data with enhanced information
-const teamMembers = [
+// Business expertise data based on company profile
+const businessExpertise = [
   {
     id: 1,
-    name: 'Sarah Johnson',
-    position: 'CEO & Founder',
-    image: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-    expertise: 'Strategic Leadership',
-    years: 15,
-    location: 'Lagos, Nigeria',
-    projects: 120,
-    bio: 'Pioneering electrical infrastructure development across Africa with innovative leadership approaches.'
+    title: 'Project Management',
+    description: 'We implement efficient project management methodologies to ensure timely completion, budget control, and effective resource allocation.',
+    icon: 'settings'
   },
   {
     id: 2,
-    name: 'Michael Ndlovu',
-    position: 'Chief Engineer',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-    expertise: 'Power Systems',
-    years: 12,
-    location: 'Cape Town, South Africa',
-    projects: 89,
-    bio: 'Expert in complex power distribution systems and renewable energy integration.'
+    title: 'Quality & Excellence',
+    description: 'We strive for excellence in every project undertaken by delivering high-quality results that exceed client expectations.',
+    icon: 'award'
   },
   {
     id: 3,
-    name: 'Thabo Mbeki',
-    position: 'Project Director',
-    image: 'https://images.unsplash.com/photo-1531384441138-2736e62e0919?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-    expertise: 'Project Management',
-    years: 10,
-    location: 'Accra, Ghana',
-    projects: 67,
-    bio: 'Delivering complex infrastructure projects on time and within budget across multiple countries.'
+    title: 'Safety & Sustainability',
+    description: 'We promote a culture of safety and sustainability, ensuring the well-being of employees, contractors, and stakeholders.',
+    icon: 'shield'
   },
   {
     id: 4,
-    name: 'Lerato Moloi',
-    position: 'Technical Lead',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-    expertise: 'Renewable Energy',
-    years: 8,
-    location: 'Nairobi, Kenya',
-    projects: 45,
-    bio: 'Specializing in sustainable energy solutions and smart grid technologies.'
+    title: 'Innovation',
+    description: 'We embrace innovation and constantly seek ways to improve processes, techniques, and technologies in our engineering solutions.',
+    icon: 'lightbulb'
   },
+  {
+    id: 5,
+    title: 'Client Satisfaction',
+    description: 'We prioritise client satisfaction by understanding their needs, requirements, and expectations to deliver tailored solutions.',
+    icon: 'users'
+  },
+  {
+    id: 6,
+    title: 'Expertise & Knowledge',
+    description: 'We develop and maintain a team of skilled professionals with expertise in consulting, electrical, and construction engineering.',
+    icon: 'book'
+  }
 ];
 
 const stats = [
-  { number: 500, label: 'Projects Completed', suffix: '+', description: 'Across 20 African countries' },
-  { number: 15, label: 'Years Experience', suffix: '+', description: 'Building electrical infrastructure' },
-  { number: 20, label: 'African Countries', suffix: '+', description: 'Where we operate' },
-  { number: 150, label: 'Team Members', suffix: '+', description: 'Skilled professionals' },
+  { number: 8, label: 'Years Experience', suffix: '+', description: 'Delivering engineering excellence' },
+  { number: 100, label: 'Black Owned', suffix: '%', description: 'Level 1 BBBEE contributor' },
+  { number: 3, label: 'Office Locations', suffix: '', description: 'PMB, Johannesburg & Ulundi' },
+  { number: 5, label: 'Service Areas', suffix: '', description: 'Multidisciplinary expertise' },
 ];
 
 const values = [
   {
-    title: 'Innovation',
-    description: 'We embrace cutting-edge technologies and creative solutions to solve complex electrical challenges.',
-    icon: 'lightbulb'
+    title: 'Quality',
+    description: 'We deliver high-quality engineering solutions that meet and exceed industry standards.',
+    icon: 'award'
   },
   {
-    title: 'Reliability',
-    description: 'Our commitment to quality ensures every project delivers consistent, dependable results.',
+    title: 'Safety',
+    description: 'We prioritize safety in all our operations, protecting employees, contractors, and communities.',
     icon: 'shield'
   },
   {
+    title: 'Integrity',
+    description: 'We conduct business with honesty, transparency, and ethical practices in all engagements.',
+    icon: 'check'
+  },
+  {
+    title: 'Innovation',
+    description: 'We embrace cutting-edge technologies and creative solutions to solve complex engineering challenges.',
+    icon: 'lightbulb'
+  },
+  {
+    title: 'Collaboration',
+    description: 'We work together with clients and partners to achieve shared goals and deliver exceptional results.',
+    icon: 'users'
+  },
+  {
     title: 'Sustainability',
-    description: 'We prioritize environmentally responsible practices in all our electrical infrastructure projects.',
+    description: 'We prioritize environmentally responsible practices in all our infrastructure projects.',
     icon: 'leaf'
   },
   {
-    title: 'Community',
-    description: 'We build lasting partnerships with local communities to create meaningful, lasting impact.',
-    icon: 'users'
+    title: 'Client Focus',
+    description: 'We put our clients first, understanding their needs and delivering tailored solutions.',
+    icon: 'heart'
+  },
+  {
+    title: 'Professionalism',
+    description: 'We maintain the highest standards of professional conduct and service excellence.',
+    icon: 'briefcase'
   }
 ];
 
 const About: React.FC = () => {
-  const [selectedMember, setSelectedMember] = useState<number | null>(null);
-
   // Auto-scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -436,150 +446,38 @@ const About: React.FC = () => {
         </section>
       </ScrollReveal>
 
-      {/* Team Section - Interactive Cards */}
+      {/* Business Expertise Section */}
       <ScrollReveal>
         <section className="py-24 px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <div className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">
-                Leadership Team
+                Why Choose Us
               </div>
               <h2 className="text-4xl font-bold text-gray-900">
-                Meet Our Experts
+                Our Business Expertise
               </h2>
+              <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">
+                With over 8 years of experience, our team of skilled professionals delivers exceptional engineering solutions across KwaZulu-Natal and beyond.
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {teamMembers.map((member, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {businessExpertise.map((item, index) => (
                 <motion.div
-                  key={member.id}
-                  initial={{ opacity: 0, y: 50, rotateY: -15 }}
-                  animate={{ opacity: 1, y: 0, rotateY: 0 }}
-                  transition={{ 
-                    duration: 0.8, 
-                    delay: index * 0.15,
-                    ease: "easeOut"
-                  }}
-                  whileHover={{ 
-                    y: -10,
-                    rotateY: 5,
-                    transition: { duration: 0.3 }
-                  }}
-                  className="group cursor-pointer perspective-1000"
-                  onClick={() => setSelectedMember(selectedMember === member.id ? null : member.id)}
+                  key={item.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                  className="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-lg hover:border-transparent transition-all duration-300"
                 >
-                  <motion.div 
-                    className="relative overflow-hidden"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <motion.div
-                      className="relative overflow-hidden rounded-lg"
-                      whileHover={{ rotateX: 5 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full aspect-square object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
-                      />
-                      <motion.div 
-                        className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-lg"
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
-                      />
-                      <motion.div 
-                        className="absolute bottom-4 left-4 text-white"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileHover={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: 0.1 }}
-                      >
-                        <motion.div 
-                          className="text-sm font-medium"
-                          initial={{ scale: 0.8 }}
-                          whileHover={{ scale: 1 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          Click to learn more
-                        </motion.div>
-                      </motion.div>
-                    </motion.div>
-                  </motion.div>
-                  
-                  <motion.div 
-                    className="mt-6"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: index * 0.15 + 0.3 }}
-                  >
-                    <motion.h3 
-                      className="text-xl font-bold text-gray-900 mb-1"
-                      whileHover={{ color: "#374151" }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {member.name}
-                    </motion.h3>
-                    <motion.p 
-                      className="text-gray-600 mb-2"
-                      initial={{ x: -20, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ duration: 0.5, delay: index * 0.15 + 0.4 }}
-                    >
-                      {member.position}
-                    </motion.p>
-                    <motion.div 
-                      className="text-sm text-gray-500"
-                      initial={{ x: -20, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ duration: 0.5, delay: index * 0.15 + 0.5 }}
-                    >
-                      {member.location}
-                    </motion.div>
-                  </motion.div>
-
-                  {selectedMember === member.id && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, height: 'auto', scale: 1 }}
-                      exit={{ opacity: 0, height: 0, scale: 0.9 }}
-                      transition={{ 
-                        duration: 0.4,
-                        ease: "easeOut"
-                      }}
-                      className="mt-4 p-4 bg-gray-50 rounded-lg overflow-hidden"
-                    >
-                      <motion.p 
-                        className="text-gray-600 mb-4"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, delay: 0.1 }}
-                      >
-                        {member.bio}
-                      </motion.p>
-                      <motion.div 
-                        className="grid grid-cols-2 gap-4 text-sm"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, delay: 0.2 }}
-                      >
-                        <motion.div
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <div className="font-medium text-gray-900">{member.years} years</div>
-                          <div className="text-gray-500">Experience</div>
-                        </motion.div>
-                        <motion.div
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <div className="font-medium text-gray-900">{member.projects}</div>
-                          <div className="text-gray-500">Projects</div>
-                        </motion.div>
-                      </motion.div>
-                    </motion.div>
-                  )}
+                  <div className="w-14 h-14 bg-gray-900 rounded-lg flex items-center justify-center mb-6">
+                    <Icon name={item.icon as any} size={28} color="white" className="text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
                 </motion.div>
               ))}
             </div>

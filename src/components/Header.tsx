@@ -645,63 +645,17 @@ const Header: React.FC = () => {
         </Logo>
         <NavLinks>
           <li>
-            <DropdownContainer ref={dropdownRef}>
-              <DropdownButton 
-                onClick={toggleDropdown}
-                $isDropdownOpen={isDropdownOpen}
-                className={isDropdownOpen ? 'open' : ''}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Our Solutions
-                <DropdownArrow
-                  animate={{ rotate: isDropdownOpen ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  ▼
-                </DropdownArrow>
-              </DropdownButton>
-              <AnimatePresence>
-                {isDropdownOpen && (
-                  <DropdownMenu
-                    $isOpen={isDropdownOpen}
-                    initial="hidden"
-                    animate="visible"
-                    exit="hidden"
-                    variants={dropdownVariants}
-                  >
-                    <DropdownList>
-                      {solutionItems.map((item, index) => (
-                        <DropdownItem
-                          key={item.path}
-                          custom={index}
-                          initial="hidden"
-                          animate="visible"
-                          variants={itemVariants}
-                        >
-                          <DropdownLink 
-                            to={item.path} 
-                            onClick={closeDropdown}
-                            whileHover={{ 
-                              x: 12,
-                              scale: 1.02,
-                              transition: { duration: 0.3 }
-                            }}
-                            whileTap={{ scale: 0.98 }}
-                          >
-                            <span>{item.label}</span>
-                            <ArrowIcon />
-                          </DropdownLink>
-                        </DropdownItem>
-                      ))}
-                    </DropdownList>
-                  </DropdownMenu>
-                )}
-              </AnimatePresence>
-            </DropdownContainer>
+            <NavLink
+              to="/about"
+              $isDropdownOpen={isDropdownOpen}
+              whileHover={{ y: -1 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Services
+            </NavLink>
           </li>
           <li>
-            <NavLink 
+            <NavLink
               to="/projects"
               $isDropdownOpen={isDropdownOpen}
               whileHover={{ y: -1 }}

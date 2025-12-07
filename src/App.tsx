@@ -28,15 +28,6 @@ const InteractiveComponentsDemo = lazy(() => import('./pages/InteractiveComponen
 const InteractiveFeatures = lazy(() => import('./pages/InteractiveFeatures'));
 const UIShowcase = lazy(() => import('./pages/UIShowcase'));
 
-// Lazy load solution pages
-const Buildings = lazy(() => import('./pages/Buildings'));
-const RenewableEnergy = lazy(() => import('./pages/RenewableEnergy'));
-const Industry = lazy(() => import('./pages/Industry'));
-const RiskAndSafety = lazy(() => import('./pages/RiskAndSafety'));
-const SustainabilityAndEnvironment = lazy(() => import('./pages/SustainabilityAndEnvironment'));
-const TransmissionAndDistribution = lazy(() => import('./pages/TransmissionAndDistribution'));
-const UrbanPlanning = lazy(() => import('./pages/UrbanPlanning'));
-const TransportationAndMobility = lazy(() => import('./pages/TransportationAndMobility'));
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -109,16 +100,6 @@ function App() {
                     <Route path="/interactive-components" element={<InteractiveComponentsDemo />} />
                     <Route path="/interactive-features" element={<InteractiveFeatures />} />
                     <Route path="/ui-showcase" element={<UIShowcase />} />
-                    
-                    {/* Solution page routes */}
-                    <Route path="/solutions/buildings" element={<Buildings />} />
-                    <Route path="/solutions/renewable-energy" element={<RenewableEnergy />} />
-                    <Route path="/solutions/industry" element={<Industry />} />
-                    <Route path="/solutions/risk-and-safety" element={<RiskAndSafety />} />
-                    <Route path="/solutions/sustainability-and-environment" element={<SustainabilityAndEnvironment />} />
-                    <Route path="/solutions/transmission-and-distribution" element={<TransmissionAndDistribution />} />
-                    <Route path="/solutions/urban-planning" element={<UrbanPlanning />} />
-                    <Route path="/solutions/transportation-and-mobility" element={<TransportationAndMobility />} />
                   </Routes>
                 </Suspense>
               </main>
