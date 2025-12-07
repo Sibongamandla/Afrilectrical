@@ -198,8 +198,8 @@ const About: React.FC = () => {
                   className="overflow-hidden rounded-lg"
                 >
                   <Image
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    alt="Electrical Infrastructure"
+                    src="/media/images/construction_site_business_meeting.jpg"
+                    alt="AFRILECTRICAL Team Meeting"
                     className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
                   />
                 </motion.div>
@@ -211,8 +211,8 @@ const About: React.FC = () => {
                   className="overflow-hidden rounded-lg mt-8"
                 >
                   <Image
-                    src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    alt="Power Systems"
+                    src="/media/images/site_inspection_workers_documents.jpg"
+                    alt="Site Inspection and Documentation"
                     className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
                   />
                 </motion.div>
@@ -291,6 +291,57 @@ const About: React.FC = () => {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Video Showcase Section */}
+      <ScrollReveal>
+        <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
+          {/* Video Background */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            poster="/media/images/asphalt_paving_road_workers.jpg"
+          >
+            <source src="/media/images/asphalt_paving_road_workers.mp4" type="video/mp4" />
+          </video>
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-transparent" />
+
+          {/* Content */}
+          <div className="relative z-10 flex items-center h-full px-8 lg:px-16">
+            <div className="max-w-2xl">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="text-sm font-medium text-white/80 uppercase tracking-wider mb-4">
+                  Our Work in Action
+                </div>
+                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                  Building Infrastructure That Lasts
+                </h2>
+                <p className="text-lg text-white/90 leading-relaxed mb-8">
+                  From road construction to electrical installations, our team delivers quality engineering solutions across KwaZulu-Natal. Watch our skilled professionals at work.
+                </p>
+                <a
+                  href="/projects"
+                  className="inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors"
+                >
+                  View Our Projects
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              </motion.div>
             </div>
           </div>
         </section>

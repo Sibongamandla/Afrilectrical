@@ -21,7 +21,7 @@ const projects = [
     capacity: '25 MW',
     beneficiaries: '8,500 households',
     tags: ['Rural Electrification', 'Community Development', 'HV/MV/LV'],
-    imageUrl: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+    imageUrl: '/media/images/night_road_construction_paving.jpg',
     featured: true,
     impact: [
       { metric: '15', label: 'Communities' },
@@ -43,7 +43,7 @@ const projects = [
     capacity: '15 MW',
     beneficiaries: '25 businesses',
     tags: ['Industrial', 'HV Systems', 'Infrastructure'],
-    imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+    imageUrl: '/media/images/aerial_construction_site_view.jpg',
     featured: false,
     impact: [
       { metric: '25', label: 'Businesses' },
@@ -65,7 +65,7 @@ const projects = [
     capacity: '8 MW',
     beneficiaries: '3,000 daily users',
     tags: ['Commercial', 'Building Systems', 'Security'],
-    imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+    imageUrl: '/media/images/crane_lifting_construction_materials.jpg',
     featured: false,
     impact: [
       { metric: '20', label: 'Floors' },
@@ -87,7 +87,7 @@ const projects = [
     capacity: '3 MW',
     beneficiaries: '50,000 patients/year',
     tags: ['Healthcare', 'Emergency Power', 'Medical Systems'],
-    imageUrl: 'https://images.unsplash.com/photo-1516841273335-e39b37888115?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+    imageUrl: '/media/images/stadium_lighting_dusk_light_trails.jpg',
     featured: false,
     impact: [
       { metric: '99.9%', label: 'Uptime' },
@@ -109,7 +109,7 @@ const projects = [
     capacity: '5 MW',
     beneficiaries: '800 families',
     tags: ['Residential', 'Township', 'Smart Metering'],
-    imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+    imageUrl: '/media/images/construction_site_sunset_cranes.jpg',
     featured: false,
     impact: [
       { metric: '800', label: 'Homes' },
@@ -131,7 +131,7 @@ const projects = [
     capacity: 'N/A',
     beneficiaries: '150 units',
     tags: ['CCTV', 'Access Control', 'Perimeter Security'],
-    imageUrl: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+    imageUrl: '/media/images/asphalt_paving_road_workers.jpg',
     featured: false,
     impact: [
       { metric: '150', label: 'Units Protected' },

@@ -820,23 +820,38 @@ const Carousel: React.FC<CarouselProps> = ({
   );
 };
 
-// Hero slide component with improved layout and consistent sizing
+// Hero slide component with improved layout and consistent sizing - supports both image and video backgrounds
 const HeroSlide: React.FC<{
   title: string;
   subtitle: string;
   description: string;
-  backgroundImage: string;
+  backgroundImage?: string;
+  backgroundVideo?: string;
   buttonText?: string;
   onButtonClick?: () => void;
-}> = ({ title, subtitle, description, backgroundImage, buttonText = "Explore Solutions", onButtonClick }) => {
+}> = ({ title, subtitle, description, backgroundImage, backgroundVideo, buttonText = "Explore Solutions", onButtonClick }) => {
   return (
     <div className="relative w-full h-full overflow-hidden">
-      {/* Background image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transform transition-transform duration-1000 hover:scale-105"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      />
-      
+      {/* Background video (if provided) */}
+      {backgroundVideo ? (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-1000"
+          poster={backgroundImage}
+        >
+          <source src={backgroundVideo} type="video/mp4" />
+        </video>
+      ) : (
+        /* Background image (fallback) */
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transform transition-transform duration-1000 hover:scale-105"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        />
+      )}
+
       {/* Brand gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-primary-900/70" />
       

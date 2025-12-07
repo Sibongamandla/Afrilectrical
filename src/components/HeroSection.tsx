@@ -136,7 +136,8 @@ const HeroSection: React.FC = () => {
       subtitle="Electrical Consulting Excellence"
       title="Professional Electrical Engineering Solutions"
       description="AFRILECTRICAL Consulting Engineers, based in Pietermaritzburg, delivers professional electrical consulting services including project management, network analysis, and turnkey solutions across South Africa."
-      backgroundImage="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e"
+      backgroundImage="/media/images/construction_site_sunset_cranes.jpg"
+      backgroundVideo="/media/images/construction_site_sunset_cranes.mp4"
       buttonText="Discuss Your Project"
       onButtonClick={() => window.location.href = '/contact'}
     />,
@@ -145,7 +146,8 @@ const HeroSection: React.FC = () => {
       subtitle="Civil & Structural Engineering"
       title="Comprehensive Infrastructure Development"
       description="From roads and transportation engineering to water and waste-water bulk services, we provide complete civil and structural engineering solutions for sustainable development."
-      backgroundImage="https://images.unsplash.com/photo-1509391366360-2e959784a276"
+      backgroundImage="/media/images/crane_lifting_construction_materials.jpg"
+      backgroundVideo="/media/images/crane_lifting_construction_materials.mp4"
       buttonText="Explore Solutions"
       onButtonClick={() => window.location.href = '/solutions'}
     />,
@@ -154,7 +156,8 @@ const HeroSection: React.FC = () => {
       subtitle="Level 1 BBBEE Contributor"
       title="Black-Owned Engineering Excellence"
       description="As a 100% black-owned consulting engineering firm and Level 1 BBBEE contributor, we combine professional expertise with transformation objectives to deliver exceptional results."
-      backgroundImage="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+      backgroundImage="/media/images/cesa_event_two_professionals.jpg"
+      backgroundVideo="/media/images/cesa_event_two_professionals.mp4"
       buttonText="Learn More"
       onButtonClick={() => window.location.href = '/about'}
     />
