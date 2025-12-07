@@ -158,7 +158,7 @@ const projects = [
     category: 'Electrical Consulting',
     title: 'KwaZulu-Natal Rural Electrification',
     description: 'Comprehensive rural electrification project bringing reliable power to 8,500 households across 15 communities in KwaZulu-Natal province.',
-    image: '/media/images/night_road_construction_paving.jpg',
+    image: '/media/images/rural_electrification_powerlines_wide.jpg',
     link: '/projects'
   },
   {
@@ -166,7 +166,7 @@ const projects = [
     category: 'Civil & Structural Engineering',
     title: 'Durban Commercial Complex',
     description: 'Integrated electrical and security systems for a 20-story commercial development featuring smart building technology.',
-    image: '/media/images/aerial_construction_site_view.jpg',
+    image: '/media/images/engineers_inspecting_siemens_switchgear.jpg',
     link: '/projects'
   },
   {
@@ -174,7 +174,7 @@ const projects = [
     category: 'Mechanical Engineering',
     title: 'Midlands Medical Centre',
     description: 'Mission-critical electrical systems including emergency power supplies and specialized lighting for surgical suites.',
-    image: '/media/images/stadium_lighting_dusk_light_trails.jpg',
+    image: '/media/images/engineer_control_panel_inspection.jpg',
     link: '/projects'
   }
 ];

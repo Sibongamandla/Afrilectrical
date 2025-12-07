@@ -136,28 +136,25 @@ const HeroSection: React.FC = () => {
       subtitle="Electrical Consulting Excellence"
       title="Professional Electrical Engineering Solutions"
       description="AFRILECTRICAL Consulting Engineers, based in Pietermaritzburg, delivers professional electrical consulting services including project management, network analysis, and turnkey solutions across South Africa."
-      backgroundImage="/media/images/construction_site_sunset_cranes.jpg"
-      backgroundVideo="/media/images/construction_site_sunset_cranes.mp4"
+      backgroundImage="/media/images/cable_installation_sunset_powerlines.jpg"
       buttonText="Discuss Your Project"
       onButtonClick={() => window.location.href = '/contact'}
     />,
     <HeroSlide
       key="slide2"
-      subtitle="Civil & Structural Engineering"
-      title="Comprehensive Infrastructure Development"
-      description="From roads and transportation engineering to water and waste-water bulk services, we provide complete civil and structural engineering solutions for sustainable development."
-      backgroundImage="/media/images/crane_lifting_construction_materials.jpg"
-      backgroundVideo="/media/images/crane_lifting_construction_materials.mp4"
-      buttonText="Explore Solutions"
-      onButtonClick={() => window.location.href = '/solutions'}
+      subtitle="Rural Electrification Specialists"
+      title="Powering Communities Across South Africa"
+      description="From high voltage reticulation to rural electrification projects, we bring reliable power infrastructure to communities throughout KwaZulu-Natal and beyond."
+      backgroundImage="/media/images/engineer_rural_substation_mountains.jpg"
+      buttonText="View Our Projects"
+      onButtonClick={() => window.location.href = '/projects'}
     />,
     <HeroSlide
       key="slide3"
       subtitle="Level 1 BBBEE Contributor"
       title="Black-Owned Engineering Excellence"
       description="As a 100% black-owned consulting engineering firm and Level 1 BBBEE contributor, we combine professional expertise with transformation objectives to deliver exceptional results."
-      backgroundImage="/media/images/cesa_event_two_professionals.jpg"
-      backgroundVideo="/media/images/cesa_event_two_professionals.mp4"
+      backgroundImage="/media/images/stakeholder_meeting_substation_site.jpg"
       buttonText="Learn More"
       onButtonClick={() => window.location.href = '/about'}
     />

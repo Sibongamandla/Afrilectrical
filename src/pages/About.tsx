@@ -198,8 +198,8 @@ const About: React.FC = () => {
                   className="overflow-hidden rounded-lg"
                 >
                   <Image
-                    src="/media/images/construction_site_business_meeting.jpg"
-                    alt="AFRILECTRICAL Team Meeting"
+                    src="/media/images/stakeholder_meeting_substation_site.jpg"
+                    alt="AFRILECTRICAL Stakeholder Meeting"
                     className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
                   />
                 </motion.div>
@@ -211,8 +211,8 @@ const About: React.FC = () => {
                   className="overflow-hidden rounded-lg mt-8"
                 >
                   <Image
-                    src="/media/images/site_inspection_workers_documents.jpg"
-                    alt="Site Inspection and Documentation"
+                    src="/media/images/engineers_reviewing_plans_fieldwork.jpg"
+                    alt="Engineers Reviewing Project Plans"
                     className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
                   />
                 </motion.div>
@@ -306,9 +306,9 @@ const About: React.FC = () => {
             loop
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
-            poster="/media/images/asphalt_paving_road_workers.jpg"
+            poster="/media/images/switchgear_testing_team_substation.jpg"
           >
-            <source src="/media/images/asphalt_paving_road_workers.mp4" type="video/mp4" />
+            <source src="/media/images/substation_switchgear_inspection.mp4" type="video/mp4" />
           </video>
 
           {/* Overlay */}
@@ -327,10 +327,10 @@ const About: React.FC = () => {
                   Our Work in Action
                 </div>
                 <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                  Building Infrastructure That Lasts
+                  Powering Infrastructure Excellence
                 </h2>
                 <p className="text-lg text-white/90 leading-relaxed mb-8">
-                  From road construction to electrical installations, our team delivers quality engineering solutions across KwaZulu-Natal. Watch our skilled professionals at work.
+                  From substation commissioning to switchgear testing, our team delivers quality electrical engineering solutions across KwaZulu-Natal. Watch our skilled professionals at work.
                 </p>
                 <a
                   href="/projects"

@@ -21,7 +21,7 @@ const projects = [
     capacity: '25 MW',
     beneficiaries: '8,500 households',
     tags: ['Rural Electrification', 'Community Development', 'HV/MV/LV'],
-    imageUrl: '/media/images/night_road_construction_paving.jpg',
+    imageUrl: '/media/images/rural_electrification_powerlines_wide.jpg',
     featured: true,
     impact: [
       { metric: '15', label: 'Communities' },
@@ -43,7 +43,7 @@ const projects = [
     capacity: '15 MW',
     beneficiaries: '25 businesses',
     tags: ['Industrial', 'HV Systems', 'Infrastructure'],
-    imageUrl: '/media/images/aerial_construction_site_view.jpg',
+    imageUrl: '/media/images/switchgear_testing_team_substation.jpg',
     featured: false,
     impact: [
       { metric: '25', label: 'Businesses' },
@@ -65,7 +65,7 @@ const projects = [
     capacity: '8 MW',
     beneficiaries: '3,000 daily users',
     tags: ['Commercial', 'Building Systems', 'Security'],
-    imageUrl: '/media/images/crane_lifting_construction_materials.jpg',
+    imageUrl: '/media/images/engineers_inspecting_siemens_switchgear.jpg',
     featured: false,
     impact: [
       { metric: '20', label: 'Floors' },
@@ -87,7 +87,7 @@ const projects = [
     capacity: '3 MW',
     beneficiaries: '50,000 patients/year',
     tags: ['Healthcare', 'Emergency Power', 'Medical Systems'],
-    imageUrl: '/media/images/stadium_lighting_dusk_light_trails.jpg',
+    imageUrl: '/media/images/switchgear_room_installation_inspection.jpg',
     featured: false,
     impact: [
       { metric: '99.9%', label: 'Uptime' },
@@ -109,7 +109,7 @@ const projects = [
     capacity: '5 MW',
     beneficiaries: '800 families',
     tags: ['Residential', 'Township', 'Smart Metering'],
-    imageUrl: '/media/images/construction_site_sunset_cranes.jpg',
+    imageUrl: '/media/images/cable_installation_sunset_powerlines.jpg',
     featured: false,
     impact: [
       { metric: '800', label: 'Homes' },
@@ -131,7 +131,7 @@ const projects = [
     capacity: 'N/A',
     beneficiaries: '150 units',
     tags: ['CCTV', 'Access Control', 'Perimeter Security'],
-    imageUrl: '/media/images/asphalt_paving_road_workers.jpg',
+    imageUrl: '/media/images/engineer_transformer_inspection_branded.jpg',
     featured: false,
     impact: [
       { metric: '150', label: 'Units Protected' },
