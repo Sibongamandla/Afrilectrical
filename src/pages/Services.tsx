@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Image } from '@heroui/react';
 import { ScrollReveal } from '../components/ui';
 import { Icon } from '../components/ui';
 import CallToActionSection from '../components/shared/CallToActionSection';
 
 // Services data based on company profile
-// Images from Unsplash featuring Black/African professionals (by Emmanuel Ikwuegbu & others)
+// Using project videos to represent each service
 const services = [
   {
     id: 1,
@@ -14,7 +13,8 @@ const services = [
     description: 'Professional electrical engineering consulting services including power system design, electrical infrastructure planning, substation design, and electrical network analysis for residential, commercial, and industrial projects.',
     icon: 'lightning',
     features: ['Power System Design', 'Substation Engineering', 'Network Analysis', 'Load Studies'],
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80'
+    video: '/media/images/substation_switchgear_inspection.mp4',
+    poster: '/media/images/engineers_inspecting_siemens_switchgear.jpg'
   },
   {
     id: 2,
@@ -22,7 +22,8 @@ const services = [
     description: 'Comprehensive civil and structural engineering solutions for infrastructure development, including site development, structural analysis, foundation design, and construction supervision.',
     icon: 'building',
     features: ['Structural Analysis', 'Foundation Design', 'Site Development', 'Construction Supervision'],
-    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80'
+    video: '/media/images/crane_lifting_construction_materials.mp4',
+    poster: '/media/images/construction_site_sunset_cranes.jpg'
   },
   {
     id: 3,
@@ -30,7 +31,8 @@ const services = [
     description: 'Expert mechanical engineering services covering HVAC systems, mechanical installations, equipment specification, and mechanical system optimization for various building types.',
     icon: 'gear',
     features: ['HVAC Systems', 'Mechanical Installations', 'Equipment Specification', 'System Optimization'],
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80'
+    video: '/media/images/site_inspection_workers_documents.mp4',
+    poster: '/media/images/engineer_control_panel_inspection.jpg'
   },
   {
     id: 4,
@@ -38,7 +40,8 @@ const services = [
     description: 'Strategic town and regional planning services including land use planning, urban development, environmental impact assessments, and municipal infrastructure planning.',
     icon: 'globe',
     features: ['Land Use Planning', 'Urban Development', 'Environmental Assessment', 'Infrastructure Planning'],
-    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80'
+    video: '/media/images/aerial_construction_site_view.mp4',
+    poster: '/media/images/rural_electrification_powerlines_wide.jpg'
   },
   {
     id: 5,
@@ -46,7 +49,8 @@ const services = [
     description: 'Integrated security system design and installation services including access control, CCTV surveillance, perimeter security, and security system integration for enhanced facility protection.',
     icon: 'shield',
     features: ['Access Control', 'CCTV Systems', 'Perimeter Security', 'System Integration'],
-    image: 'https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=800&q=80'
+    video: '/media/images/stadium_lighting_dusk_light_trails.mp4',
+    poster: '/media/images/switchgear_room_installation_inspection.jpg'
   }
 ];
 
@@ -157,18 +161,23 @@ const Services: React.FC = () => {
                   viewport={{ once: true }}
                   className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
                 >
-                  {/* Image */}
+                  {/* Video */}
                   <motion.div
                     className={`relative overflow-hidden rounded-2xl ${index % 2 === 1 ? 'lg:order-2' : ''}`}
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <Image
-                      src={service.image}
-                      alt={service.title}
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      poster={service.poster}
                       className="w-full h-80 lg:h-96 object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent" />
+                    >
+                      <source src={service.video} type="video/mp4" />
+                    </video>
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent pointer-events-none" />
                     <div className="absolute bottom-6 left-6">
                       <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-lg">
                         <Icon name={service.icon as any} size={28} color="#111827" />
