@@ -6,6 +6,7 @@ import { Icon } from '../components/ui';
 import CallToActionSection from '../components/shared/CallToActionSection';
 
 // Services data based on company profile
+// Images from Unsplash featuring Black/African professionals (by Emmanuel Ikwuegbu & others)
 const services = [
   {
     id: 1,
@@ -13,7 +14,7 @@ const services = [
     description: 'Professional electrical engineering consulting services including power system design, electrical infrastructure planning, substation design, and electrical network analysis for residential, commercial, and industrial projects.',
     icon: 'lightning',
     features: ['Power System Design', 'Substation Engineering', 'Network Analysis', 'Load Studies'],
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80'
   },
   {
     id: 2,
@@ -21,7 +22,7 @@ const services = [
     description: 'Comprehensive civil and structural engineering solutions for infrastructure development, including site development, structural analysis, foundation design, and construction supervision.',
     icon: 'building',
     features: ['Structural Analysis', 'Foundation Design', 'Site Development', 'Construction Supervision'],
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80'
   },
   {
     id: 3,
@@ -29,7 +30,7 @@ const services = [
     description: 'Expert mechanical engineering services covering HVAC systems, mechanical installations, equipment specification, and mechanical system optimization for various building types.',
     icon: 'gear',
     features: ['HVAC Systems', 'Mechanical Installations', 'Equipment Specification', 'System Optimization'],
-    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80'
   },
   {
     id: 4,
@@ -37,7 +38,7 @@ const services = [
     description: 'Strategic town and regional planning services including land use planning, urban development, environmental impact assessments, and municipal infrastructure planning.',
     icon: 'globe',
     features: ['Land Use Planning', 'Urban Development', 'Environmental Assessment', 'Infrastructure Planning'],
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80'
   },
   {
     id: 5,
@@ -45,7 +46,7 @@ const services = [
     description: 'Integrated security system design and installation services including access control, CCTV surveillance, perimeter security, and security system integration for enhanced facility protection.',
     icon: 'shield',
     features: ['Access Control', 'CCTV Systems', 'Perimeter Security', 'System Integration'],
-    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=800&q=80'
   }
 ];
 
