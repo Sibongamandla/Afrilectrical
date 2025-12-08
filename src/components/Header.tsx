@@ -646,7 +646,7 @@ const Header: React.FC = () => {
         <NavLinks>
           <li>
             <NavLink
-              to="/about"
+              to="/services"
               $isDropdownOpen={isDropdownOpen}
               whileHover={{ y: -1 }}
               whileTap={{ scale: 0.98 }}

@@ -12,13 +12,13 @@ const businessExpertise = [
     id: 1,
     title: 'Project Management',
     description: 'We implement efficient project management methodologies to ensure timely completion, budget control, and effective resource allocation.',
-    icon: 'settings'
+    icon: 'gear'
   },
   {
     id: 2,
     title: 'Quality & Excellence',
     description: 'We strive for excellence in every project undertaken by delivering high-quality results that exceed client expectations.',
-    icon: 'award'
+    icon: 'check'
   },
   {
     id: 3,
@@ -30,19 +30,19 @@ const businessExpertise = [
     id: 4,
     title: 'Innovation',
     description: 'We embrace innovation and constantly seek ways to improve processes, techniques, and technologies in our engineering solutions.',
-    icon: 'lightbulb'
+    icon: 'lightning'
   },
   {
     id: 5,
     title: 'Client Satisfaction',
     description: 'We prioritise client satisfaction by understanding their needs, requirements, and expectations to deliver tailored solutions.',
-    icon: 'users'
+    icon: 'people'
   },
   {
     id: 6,
     title: 'Expertise & Knowledge',
     description: 'We develop and maintain a team of skilled professionals with expertise in consulting, electrical, and construction engineering.',
-    icon: 'book'
+    icon: 'education'
   }
 ];
 
@@ -57,27 +57,27 @@ const values = [
   {
     title: 'Quality',
     description: 'We deliver high-quality engineering solutions that meet and exceed industry standards.',
-    icon: 'award'
+    icon: 'check'
   },
   {
     title: 'Safety',
     description: 'We prioritize safety in all our operations, protecting employees, contractors, and communities.',
-    icon: 'shield'
+    icon: 'safety'
   },
   {
     title: 'Integrity',
     description: 'We conduct business with honesty, transparency, and ethical practices in all engagements.',
-    icon: 'check'
+    icon: 'shield'
   },
   {
     title: 'Innovation',
     description: 'We embrace cutting-edge technologies and creative solutions to solve complex engineering challenges.',
-    icon: 'lightbulb'
+    icon: 'lightning'
   },
   {
     title: 'Collaboration',
     description: 'We work together with clients and partners to achieve shared goals and deliver exceptional results.',
-    icon: 'users'
+    icon: 'people'
   },
   {
     title: 'Sustainability',
@@ -87,12 +87,12 @@ const values = [
   {
     title: 'Client Focus',
     description: 'We put our clients first, understanding their needs and delivering tailored solutions.',
-    icon: 'heart'
+    icon: 'globe'
   },
   {
     title: 'Professionalism',
     description: 'We maintain the highest standards of professional conduct and service excellence.',
-    icon: 'briefcase'
+    icon: 'construction'
   }
 ];
 
@@ -144,24 +144,24 @@ const About: React.FC = () => {
                   electrical future
                 </motion.span>
               </motion.h1>
-              <motion.p 
+              <motion.p
                 className="text-xl text-gray-600 leading-relaxed mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                We are 500+ specialists across 7 countries, working across disciplines to lead projects from implementation to completion, transforming Africa's electrical infrastructure.
+                A 100% black-owned consulting engineering firm based in KwaZulu-Natal, delivering professional electrical, civil, mechanical, and structural engineering solutions since 2016.
               </motion.p>
-              <motion.div 
+              <motion.div
                 className="flex items-center gap-8"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.0 }}
               >
                 {[
-                  { value: "2005", label: "Founded" },
-                  { value: "500+", label: "Projects" },
-                  { value: "20+", label: "Countries" }
+                  { value: "2016", label: "Founded" },
+                  { value: "100%", label: "Black Owned" },
+                  { value: "Level 1", label: "BBBEE" }
                 ].map((stat, index) => (
                   <motion.div
                     key={stat.label}
@@ -240,7 +240,7 @@ const About: React.FC = () => {
                 whileHover={{ scale: 1.1, rotate: 3 }}
               >
                 <div className="text-2xl font-bold text-gray-900">
-                  <AnimatedCounter end={8} duration={2000} />
+                  <AnimatedCounter end={8} duration={0.8} />
                 </div>
                 <div className="text-sm text-gray-600">Years Excellence</div>
               </motion.div>
@@ -301,6 +301,67 @@ const About: React.FC = () => {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Founder Section */}
+      <ScrollReveal>
+        <section className="py-24 px-8 lg:px-16 bg-gray-900 text-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-4">
+                  Leadership
+                </div>
+                <h2 className="text-4xl font-bold mb-6">
+                  Meet Our Founder
+                </h2>
+                <h3 className="text-2xl font-semibold text-gray-300 mb-4">
+                  Nkosinathi Sibonga
+                </h3>
+                <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                  As the founder and director of AFRILECTRICAL, Nkosinathi Sibonga established the company in 2016 with a vision to provide professional engineering consulting services that meet the highest industry standards while contributing to community development in KwaZulu-Natal.
+                </p>
+                <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                  With a passion for electrical engineering and infrastructure development, Nkosinathi has led AFRILECTRICAL to become a respected Level 1 BBBEE contributor, delivering multidisciplinary engineering solutions across the region.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <div className="bg-white/10 px-4 py-2 rounded-lg">
+                    <div className="text-sm text-gray-400">Role</div>
+                    <div className="font-semibold">Founder & Director</div>
+                  </div>
+                  <div className="bg-white/10 px-4 py-2 rounded-lg">
+                    <div className="text-sm text-gray-400">Location</div>
+                    <div className="font-semibold">Pietermaritzburg, KZN</div>
+                  </div>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div className="aspect-square bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl overflow-hidden">
+                  <Image
+                    src="/media/images/engineer_rural_substation_mountains.jpg"
+                    alt="AFRILECTRICAL Engineering Team at Work"
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -left-6 bg-white text-gray-900 p-6 rounded-xl shadow-xl">
+                  <div className="text-3xl font-bold">8+</div>
+                  <div className="text-sm text-gray-600">Years Leading</div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -540,7 +601,7 @@ const About: React.FC = () => {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: index * 0.2 + 0.8 }}
                       >
-                        <AnimatedCounter end={stat.number} duration={2000} />
+                        <AnimatedCounter end={stat.number} duration={0.8} />
                         {stat.suffix}
                       </motion.span>
                     </motion.div>

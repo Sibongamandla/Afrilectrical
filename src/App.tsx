@@ -27,6 +27,7 @@ const ComponentsDemo = lazy(() => import('./pages/ComponentsDemo'));
 const InteractiveComponentsDemo = lazy(() => import('./pages/InteractiveComponentsDemo'));
 const InteractiveFeatures = lazy(() => import('./pages/InteractiveFeatures'));
 const UIShowcase = lazy(() => import('./pages/UIShowcase'));
+const Services = lazy(() => import('./pages/Services'));
 
 
 function App() {
@@ -88,6 +89,7 @@ function App() {
                     <Route path="/home" element={<Navigate to="/" replace />} />
                     
                     {/* Main page routes */}
+                    <Route path="/services" element={<Services />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/projects" element={<Projects />} />
                     <Route path="/portfolio" element={<Portfolio />} />
