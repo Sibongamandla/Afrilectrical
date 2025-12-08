@@ -91,9 +91,9 @@ const Logo = styled(motion(Link))<{ $isDropdownOpen: boolean }>`
 `;
 
 const LogoMark = styled(motion.img)`
-  height: 64px;
+  height: 84px;
   width: auto;
-  max-width: 260px;
+  max-width: 320px;
   transition: all ${({ theme }) => theme.transitions.base};
 
   /* CSS-based transparency for white background */
@@ -106,18 +106,18 @@ const LogoMark = styled(motion.img)`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    height: 56px;
-    max-width: 240px;
+    height: 76px;
+    max-width: 300px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    height: 52px;
-    max-width: 220px;
+    height: 72px;
+    max-width: 280px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    height: 48px;
-    max-width: 200px;
+    height: 68px;
+    max-width: 260px;
   }
 `;
 
