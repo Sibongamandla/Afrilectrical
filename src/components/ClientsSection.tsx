@@ -17,20 +17,34 @@ interface Client {
   logo: string;
 }
 
+// Actual certifications and professional bodies AFRILECTRICAL is registered with
 const clients: Client[] = [
-  { name: 'Siemens AG', logo: 'https://www.efla-engineers.com/_next/image?url=https%3A%2F%2Fprismic-io.s3.amazonaws.com%2Fefla-main-storage%2F3a0c18b1-b056-4066-b789-a19e003611d3_landsnet.svg&w=384&q=75' },
-  { name: 'Schneider Electric', logo: 'https://www.efla-engineers.com/_next/image?url=https%3A%2F%2Fprismic-io.s3.amazonaws.com%2Fefla-main-storage%2F94abe0cb-cc9e-4753-9e05-a1bd981ad52f_energinet.svg&w=384&q=75' },
-  { name: 'African Development Bank', logo: 'https://www.efla-engineers.com/_next/image?url=https%3A%2F%2Fprismic-io.s3.amazonaws.com%2Fefla-main-storage%2F75d7da30-0cab-4bf7-b6d9-8c9824cb8f3e_omexom.svg&w=384&q=75' },
-  { name: 'Engineering Council of South Africa', logo: 'https://www.efla-engineers.com/_next/image?url=https%3A%2F%2Fprismic-io.s3.amazonaws.com%2Fefla-main-storage%2Fimage-aed405be97a3.svg&w=384&q=75' },
-  { name: 'Kenya Power', logo: 'https://www.efla-engineers.com/_next/image?url=https%3A%2F%2Fprismic-io.s3.amazonaws.com%2Fefla-main-storage%2Fde900be8-8e31-4a7c-a91c-c6b51cfed8d5_emera.svg&w=384&q=75' },
-  { name: 'Ghana Health Service', logo: 'https://www.efla-engineers.com/_next/image?url=https%3A%2F%2Fprismic-io.s3.amazonaws.com%2Fefla-main-storage%2Fimage-387cb94cdb2d38.svg&w=384&q=75' },
-  { name: 'Nigeria Electricity Regulatory Commission', logo: 'https://www.efla-engineers.com/_next/image?url=https%3A%2F%2Fprismic-io.s3.amazonaws.com%2Fefla-main-storage%2Fimage-c9316e157565a8.svg&w=384&q=75' },
+  {
+    name: 'Engineering Council of South Africa (ECSA)',
+    logo: 'https://ecsa.co.za/wp-content/uploads/2020/02/Web-ECSA-Logo-sml-1.png'
+  },
+  {
+    name: 'South African Institute of Electrical Engineers (SAIEE)',
+    logo: 'https://saiee-cdn-cdhwb0c5edc2bveb.a02.azurefd.net/wm-418498-cmsimages/SAIEE-with-Description.JPG'
+  },
+  {
+    name: 'Consulting Engineers South Africa (CESA)',
+    logo: 'https://www.cesa.co.za/wp-content/uploads/2024/02/CESA-Logo-png-300x115.png'
+  },
+  {
+    name: 'BBBEE Level 1 Contributor',
+    logo: 'https://lukhozi.co.za/wp-content/uploads/2019/01/BBBEE-LOGO.png'
+  },
 ];
 
 const ClientsSection: React.FC = () => {
   return (
     <ClientsContainer>
-      <AutoScrollCarousel clients={clients} />
+      <AutoScrollCarousel
+        clients={clients}
+        title="Professional Registrations & Certifications"
+        subtitle="AFRILECTRICAL is registered with South Africa's leading engineering professional bodies and maintains the highest industry standards."
+      />
     </ClientsContainer>
   );
 };
