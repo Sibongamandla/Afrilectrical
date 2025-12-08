@@ -18,8 +18,8 @@ const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Projects = lazy(() => import('./pages/Projects'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
-const Stories = lazy(() => import('./pages/Stories'));
-const News = lazy(() => import('./pages/News'));
+// const Stories = lazy(() => import('./pages/Stories')); // Commented out - contains fabricated content
+// const News = lazy(() => import('./pages/News')); // Commented out - contains fabricated content
 const Contact = lazy(() => import('./pages/Contact'));
 const Careers = lazy(() => import('./pages/Careers'));
 const BusinessExpertise = lazy(() => import('./pages/BusinessExpertise'));
@@ -93,9 +93,9 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/projects" element={<Projects />} />
                     <Route path="/portfolio" element={<Portfolio />} />
-                    <Route path="/stories" element={<Stories />} />
+                    {/* <Route path="/stories" element={<Stories />} /> */} {/* Commented out - contains fabricated content */}
                     <Route path="/expertise" element={<BusinessExpertise />} />
-                    <Route path="/news" element={<News />} />
+                    {/* <Route path="/news" element={<News />} /> */} {/* Commented out - contains fabricated content */}
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/careers" element={<Careers />} />
                     <Route path="/components" element={<ComponentsDemo />} />

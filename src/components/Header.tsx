@@ -561,8 +561,9 @@ const Header: React.FC = () => {
               About Us
             </NavLink>
           </li>
+{/* Stories page commented out - contains fabricated content
           <li>
-            <NavLink 
+            <NavLink
               to="/stories"
               $isDropdownOpen={isDropdownOpen}
               whileHover={{ y: -1 }}
@@ -571,8 +572,10 @@ const Header: React.FC = () => {
               Stories
             </NavLink>
           </li>
+*/}
+{/* News page commented out - contains fabricated content
           <li>
-            <NavLink 
+            <NavLink
               to="/news"
               $isDropdownOpen={isDropdownOpen}
               whileHover={{ y: -1 }}
@@ -581,6 +584,7 @@ const Header: React.FC = () => {
               News
             </NavLink>
           </li>
+*/}
         </NavLinks>
         <ContactButton 
           to="/contact"
