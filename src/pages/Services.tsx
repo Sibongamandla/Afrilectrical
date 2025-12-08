@@ -13,7 +13,7 @@ const services = [
     description: 'Professional electrical engineering consulting services including power system design, electrical infrastructure planning, substation design, and electrical network analysis for residential, commercial, and industrial projects.',
     icon: 'lightning',
     features: ['Power System Design', 'Substation Engineering', 'Network Analysis', 'Load Studies'],
-    image: '/media/images/engineers_inspecting_siemens_switchgear.jpg'
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80'
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const services = [
     description: 'Comprehensive civil and structural engineering solutions for infrastructure development, including site development, structural analysis, foundation design, and construction supervision.',
     icon: 'building',
     features: ['Structural Analysis', 'Foundation Design', 'Site Development', 'Construction Supervision'],
-    image: '/media/images/stakeholder_meeting_substation_site.jpg'
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80'
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const services = [
     description: 'Expert mechanical engineering services covering HVAC systems, mechanical installations, equipment specification, and mechanical system optimization for various building types.',
     icon: 'gear',
     features: ['HVAC Systems', 'Mechanical Installations', 'Equipment Specification', 'System Optimization'],
-    image: '/media/images/engineer_control_panel_inspection.jpg'
+    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80'
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const services = [
     description: 'Strategic town and regional planning services including land use planning, urban development, environmental impact assessments, and municipal infrastructure planning.',
     icon: 'globe',
     features: ['Land Use Planning', 'Urban Development', 'Environmental Assessment', 'Infrastructure Planning'],
-    image: '/media/images/rural_electrification_powerlines_wide.jpg'
+    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80'
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ const services = [
     description: 'Integrated security system design and installation services including access control, CCTV surveillance, perimeter security, and security system integration for enhanced facility protection.',
     icon: 'shield',
     features: ['Access Control', 'CCTV Systems', 'Perimeter Security', 'System Integration'],
-    image: '/media/images/switchgear_room_installation_inspection.jpg'
+    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&q=80'
   }
 ];
 
