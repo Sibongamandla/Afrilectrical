@@ -320,7 +320,7 @@ const About: React.FC = () => {
                 <div className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-4">
                   Leadership
                 </div>
-                <h2 className="text-4xl font-bold mb-6">
+                <h2 className="text-4xl font-bold mb-6 text-white">
                   Meet Our Founder
                 </h2>
                 <h3 className="text-2xl font-semibold text-gray-300 mb-4">
@@ -350,16 +350,16 @@ const About: React.FC = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="aspect-square bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl overflow-hidden">
+                <div className="aspect-[3/4] bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/media/images/engineer_rural_substation_mountains.jpg"
-                    alt="AFRILECTRICAL Engineering Team at Work"
-                    className="w-full h-full object-cover opacity-80"
+                    src="/media/images/nkosinathi_ndlela_portrait.jpg"
+                    alt="Nkosinathi Ndlela - Founder & Director of AFRILECTRICAL"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
-                <div className="absolute -bottom-6 -left-6 bg-white text-gray-900 p-6 rounded-xl shadow-xl">
-                  <div className="text-3xl font-bold">8+</div>
-                  <div className="text-sm text-gray-600">Years Leading</div>
+                <div className="absolute -bottom-6 -right-6 bg-white text-gray-900 p-6 rounded-xl shadow-xl">
+                  <div className="text-3xl font-bold">Pr.Eng</div>
+                  <div className="text-sm text-gray-600">ECSA Registered</div>
                 </div>
               </motion.div>
             </div>

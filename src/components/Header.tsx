@@ -524,7 +524,7 @@ const Header: React.FC = () => {
           whileTap={{ scale: 0.98 }}
         >
           <LogoMark 
-            src="/media/images/afrilectrical_logo_light_background.png" 
+            src="/media/images/afrilectrical_logo_transparent.png" 
             alt="AFRILECTRICAL Logo"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
