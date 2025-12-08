@@ -14,80 +14,63 @@ const HeaderContainer = styled.header<{ isScrolled: boolean; $isDropdownOpen: bo
     if ($isDropdownOpen) {
       return theme.colors.gray900;
     }
-    return isScrolled 
-      ? theme.colors.white
-      : 'rgba(255, 255, 255, 0.97)';
+    return isScrolled
+      ? 'rgba(255, 255, 255, 0.98)'
+      : 'rgba(255, 255, 255, 0.95)';
   }};
-  backdrop-filter: ${({ $isDropdownOpen }) => $isDropdownOpen ? 'none' : 'blur(20px)'};
-  -webkit-backdrop-filter: ${({ $isDropdownOpen }) => $isDropdownOpen ? 'none' : 'blur(20px)'};
+  backdrop-filter: ${({ $isDropdownOpen }) => $isDropdownOpen ? 'none' : 'blur(12px)'};
+  -webkit-backdrop-filter: ${({ $isDropdownOpen }) => $isDropdownOpen ? 'none' : 'blur(12px)'};
   border-bottom: ${({ isScrolled, $isDropdownOpen, theme }) => {
     if ($isDropdownOpen) {
       return `1px solid ${theme.colors.gray700}`;
     }
-    return isScrolled 
-      ? `1px solid ${theme.colors.gray200}` 
-      : `1px solid ${theme.colors.gray100}`;
+    return isScrolled
+      ? '1px solid rgba(0, 0, 0, 0.06)'
+      : '1px solid rgba(0, 0, 0, 0.04)';
   }};
-  transition: all ${({ theme }) => theme.transitions.base};
-  padding: ${({ isScrolled, theme }) => 
-    isScrolled ? `${theme.spacing.sm} 0` : `${theme.spacing.md} 0`
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: ${({ isScrolled }) => isScrolled ? '4px 0' : '8px 0'};
+  box-shadow: ${({ isScrolled }) =>
+    isScrolled
+      ? '0 1px 3px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.04)'
+      : 'none'
   };
-  box-shadow: ${({ isScrolled, theme }) => 
-    isScrolled 
-      ? '0 4px 20px rgba(0, 0, 0, 0.08)'
-      : '0 2px 10px rgba(0, 0, 0, 0.04)'
-  };
-  
-  /* Enhanced glass morphism effect */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: ${({ isScrolled, theme }) => 
-      isScrolled 
-        ? 'transparent'
-        : `linear-gradient(135deg, ${theme.colors.glass.light} 0%, transparent 100%)`
-    };
-    pointer-events: none;
-    z-index: -1;
-  }
-  
-  @supports not (backdrop-filter: blur(16px)) {
-    background: ${({ isScrolled, theme }) => 
-      isScrolled 
+
+  @supports not (backdrop-filter: blur(12px)) {
+    background: ${({ isScrolled, theme }) =>
+      isScrolled
         ? theme.colors.white
-        : 'rgba(255, 255, 255, 0.95)'
+        : 'rgba(255, 255, 255, 0.98)'
     };
   }
-  
+
   ${reducedMotionSupport}
 `;
 
 const Nav = styled.nav`
   width: 100%;
-  padding: 0 ${({ theme }) => theme.spacing.xxl};
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 64px;
   position: relative;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    padding: 0 ${({ theme }) => theme.spacing.xl};
-    height: 68px;
-  }
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: 0 ${({ theme }) => theme.spacing.lg};
-    height: 64px;
-  }
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    padding: 0 ${({ theme }) => theme.spacing.md};
+    padding: 0 24px;
     height: 60px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: 0 20px;
+    height: 56px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: 0 16px;
+    height: 52px;
   }
 `;
 
@@ -95,94 +78,56 @@ const Logo = styled(motion(Link))<{ $isDropdownOpen: boolean }>`
   display: flex;
   align-items: center;
   text-decoration: none;
-  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
-  font-size: clamp(1.5rem, 3vw, 1.875rem);
-  color: ${({ $isDropdownOpen, theme }) => 
-    $isDropdownOpen ? theme.colors.white : theme.colors.heading
-  };
-  transition: all ${({ theme }) => theme.transitions.base};
   position: relative;
   z-index: 10;
-  font-family: ${({ theme }) => theme.typography.fontFamily.heading};
-  padding: ${({ theme }) => theme.spacing.sm};
-  border-radius: ${({ theme }) => theme.borderRadius.md};
-  letter-spacing: -0.02em;
-  
-  ${animationMixins.gentleHoverScale}
-  
+  padding: 4px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px ${({ theme }) => theme.colors.primarySoft};
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
   }
 `;
 
 const LogoMark = styled(motion.img)`
-  height: 80px; /* Increased from 64px */
-  width: auto; /* Let width scale proportionally with the logo text */
-  max-width: 350px; /* Increased from 280px to allow much wider logo */
-  margin-right: 0; /* Remove margin since this is now the complete logo */
+  height: 52px;
+  width: auto;
+  max-width: 220px;
   transition: all ${({ theme }) => theme.transitions.base};
-  border-radius: ${({ theme }) => theme.borderRadius.md};
-  
-  /* Remove white background - Option 1 */
+
+  /* CSS-based transparency for white background */
   background: transparent;
-  filter: 
-    contrast(1.3) 
-    brightness(0.9) 
-    saturate(1.1);
   mix-blend-mode: multiply;
-  
-  /* Alternative Option 2 - If background is specific color */
-  /* 
-  background: transparent;
-  filter: 
-    contrast(2) 
-    brightness(0.8) 
-    drop-shadow(0 0 0 rgba(0,0,0,0));
-  */
-  
-  /* Alternative Option 3 - Aggressive white removal */
-  /*
-  filter: 
-    invert(1) 
-    contrast(2) 
-    brightness(1.2) 
-    invert(1);
-  */
-  
+
   ${Logo}:hover & {
-    transform: translateY(-2px) scale(1.05);
-    filter: brightness(1.1) contrast(1.2);
-    mix-blend-mode: multiply;
+    transform: scale(1.02);
+    filter: brightness(1.05);
   }
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    height: 68px; /* Increased from 56px */
-    max-width: 300px; /* Increased from 240px */
+    height: 48px;
+    max-width: 200px;
   }
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    height: 56px; /* Increased from 48px */
-    max-width: 250px; /* Increased from 200px */
+    height: 44px;
+    max-width: 180px;
   }
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    height: 48px; /* Increased from 42px */
-    max-width: 220px; /* Increased from 180px */
+    height: 40px;
+    max-width: 160px;
   }
 `;
 
 const NavLinks = styled.ul`
   display: flex;
   list-style: none;
-  gap: ${({ theme }) => theme.spacing.xxl};
+  gap: 8px;
   margin: 0;
   padding: 0;
   align-items: center;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    gap: ${({ theme }) => theme.spacing.xl};
-  }
 
   @media (max-width: 1024px) {
     display: none;
@@ -190,72 +135,32 @@ const NavLinks = styled.ul`
 `;
 
 const NavLink = styled(motion(Link))<{ $isDropdownOpen: boolean }>`
-  color: ${({ $isDropdownOpen, theme }) => 
-    $isDropdownOpen ? theme.colors.white : theme.colors.text
+  color: ${({ $isDropdownOpen, theme }) =>
+    $isDropdownOpen ? theme.colors.white : '#374151'
   };
   text-decoration: none;
-  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
-  font-family: ${({ theme }) => theme.typography.fontFamily.body};
-  font-size: ${({ theme }) => theme.typography.fontSize.md};
-  transition: all ${({ theme }) => theme.transitions.base};
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
   position: relative;
-  padding: ${({ theme }) => `${theme.spacing.md} ${theme.spacing.lg}`};
-  border-radius: ${({ theme }) => theme.borderRadius.md};
-  letter-spacing: ${({ theme }) => theme.typography.letterSpacing.normal};
-  
-  /* Hover background effect */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: ${({ theme }) => theme.colors.primarySoft};
-    border-radius: inherit;
-    opacity: 0;
-    transform: scale(0.85);
-    transition: all ${({ theme }) => theme.transitions.base};
-  }
-  
-  /* Active indicator line */
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 50%;
-    transform: translateX(-50%) scaleX(0);
-    width: 100%;
-    height: 2px;
-    background: ${({ theme }) => theme.colors.gradient.hero};
-    border-radius: 1px;
-    transition: transform ${({ theme }) => theme.transitions.base};
-  }
-  
+  padding: 8px 16px;
+  border-radius: 8px;
+  letter-spacing: -0.01em;
+
   &:hover {
-    color: ${({ theme }) => theme.colors.primary};
-    transform: translateY(-1px);
-    
-    &::before {
-      opacity: 1;
-      transform: scale(1);
-    }
+    color: #111827;
+    background: rgba(0, 0, 0, 0.04);
   }
-  
+
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px ${({ theme }) => theme.colors.primarySoft};
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
   }
-  
+
   &.active {
     color: ${({ theme }) => theme.colors.primary};
-    
-    &::after {
-      transform: translateX(-50%) scaleX(1);
-    }
+    background: rgba(227, 30, 36, 0.06);
   }
-  
-  ${animationMixins.focusEffect}
 `;
 
 const DropdownContainer = styled.div`
@@ -488,50 +393,32 @@ const ContactButton = styled(motion(Link))`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: ${({ theme }) => `${theme.spacing.md} ${theme.spacing.xl}`};
-  background: ${({ theme }) => theme.colors.gradient.hero};
+  padding: 10px 20px;
+  background: #111827;
   border: none;
-  border-radius: ${({ theme }) => theme.borderRadius.lg};
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: ${({ theme }) => theme.typography.fontWeight.semibold};
-  font-family: ${({ theme }) => theme.typography.fontFamily.body};
-  font-size: ${({ theme }) => theme.typography.fontSize.base};
+  font-weight: 500;
+  font-size: 14px;
   cursor: pointer;
-  transition: all ${({ theme }) => theme.transitions.base};
+  transition: all 0.2s ease;
   text-align: center;
-  color: ${({ theme }) => theme.colors.white};
-  letter-spacing: ${({ theme }) => theme.typography.letterSpacing.normal};
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(227, 30, 36, 0.3);
-  min-width: 180px;
+  color: white;
+  letter-spacing: -0.01em;
 
-  /* Shimmer effect */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, ${({ theme }) => theme.colors.glass.light}, transparent);
-    transition: left ${({ theme }) => theme.transitions.slow};
+  &:hover {
+    background: #1f2937;
+    transform: translateY(-1px);
   }
 
-  ${animationMixins.buttonHover}
-  
-  &:hover::before {
-    left: 100%;
-  }
-  
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px ${({ theme }) => theme.colors.primarySoft};
+    box-shadow: 0 0 0 2px rgba(17, 24, 39, 0.2);
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: ${({ theme }) => `${theme.spacing.xs} ${theme.spacing.md}`};
-    font-size: ${({ theme }) => theme.typography.fontSize.xs};
+    padding: 8px 16px;
+    font-size: 13px;
   }
 `;
 
@@ -637,7 +524,7 @@ const Header: React.FC = () => {
           whileTap={{ scale: 0.98 }}
         >
           <LogoMark 
-            src="/afri-logo.ico" 
+            src="/media/images/afrilectrical_logo_light_background.png" 
             alt="AFRILECTRICAL Logo"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

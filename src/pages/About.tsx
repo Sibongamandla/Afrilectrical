@@ -324,22 +324,22 @@ const About: React.FC = () => {
                   Meet Our Founder
                 </h2>
                 <h3 className="text-2xl font-semibold text-gray-300 mb-4">
-                  Nkosinathi Sibonga
+                  Nkosinathi Ndlela, Pr.Eng
                 </h3>
                 <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                  As the founder and director of AFRILECTRICAL, Nkosinathi Sibonga established the company in 2016 with a vision to provide professional engineering consulting services that meet the highest industry standards while contributing to community development in KwaZulu-Natal.
+                  As the founder and director of AFRILECTRICAL, Nkosinathi Ndlela is a qualified and experienced professional electrical engineer registered with the Engineering Council of South Africa (ECSA) and a member of the South African Institute of Electrical Engineers (SAIEE).
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                  With a passion for electrical engineering and infrastructure development, Nkosinathi has led AFRILECTRICAL to become a respected Level 1 BBBEE contributor, delivering multidisciplinary engineering solutions across the region.
+                  He holds a BSc in Electrical Engineering, a Post Graduate Diploma in Business Management, and a Master's degree in Engineering Management. He has strong competencies in project planning, design, costing, and implementation of engineering and construction projects of sub-transmission and distribution power systems.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <div className="bg-white/10 px-4 py-2 rounded-lg">
-                    <div className="text-sm text-gray-400">Role</div>
-                    <div className="font-semibold">Founder & Director</div>
+                    <div className="text-sm text-gray-400">Qualifications</div>
+                    <div className="font-semibold">BSc Elec. Eng, PGDip, MEng</div>
                   </div>
                   <div className="bg-white/10 px-4 py-2 rounded-lg">
-                    <div className="text-sm text-gray-400">Location</div>
-                    <div className="font-semibold">Pietermaritzburg, KZN</div>
+                    <div className="text-sm text-gray-400">Registration</div>
+                    <div className="font-semibold">ECSA Pr.Eng, SAIEE Member</div>
                   </div>
                 </div>
               </motion.div>
