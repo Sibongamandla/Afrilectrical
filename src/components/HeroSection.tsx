@@ -157,9 +157,11 @@ const HeroSection: React.FC = () => {
       backgroundImage="/media/images/stakeholder_meeting_substation_site.jpg"
       buttonText="Learn More"
       onButtonClick={() => window.location.href = '/about'}
+      overlayImage="https://lukhozi.co.za/wp-content/uploads/2019/01/BBBEE-LOGO.png"
+      overlayImageAlt="Level 1 BBBEE Contributor Badge"
     />
   ];
-  
+
   return (
     <HeroContainer>
       {/* Full-width Carousel with enhanced features */}
@@ -195,7 +197,7 @@ const HeroSection: React.FC = () => {
           className="w-full h-full"
         />
       </CarouselContainer>
-      
+
       {/* Static Stats overlay */}
       <ScrollReveal direction="up" delay={0.5} once={true}>
         <StatsContainer>
@@ -223,7 +225,7 @@ const HeroSection: React.FC = () => {
           </StatItem>
         </StatsContainer>
       </ScrollReveal>
-      
+
       {/* Scroll Indicator */}
       <ScrollIndicator
         animate={{ y: [0, 10, 0] }}
