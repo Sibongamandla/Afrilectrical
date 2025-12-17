@@ -116,9 +116,9 @@ const Footer: React.FC = () => {
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         duration: 0.5,
         delayChildren: 0.1,
         staggerChildren: 0.1
@@ -128,8 +128,8 @@ const Footer: React.FC = () => {
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: { 
-      y: 0, 
+    visible: {
+      y: 0,
       opacity: 1,
       transition: { duration: 0.3 }
     }
@@ -156,7 +156,7 @@ const Footer: React.FC = () => {
           <FooterLinksContainer variants={itemVariants}>
             <FooterLinks variants={itemVariants}>
               <FooterLink variants={itemVariants}>
-                <FooterLinkAnchor 
+                <FooterLinkAnchor
                   href="#"
                   initial="hidden"
                   animate="visible"
@@ -165,7 +165,7 @@ const Footer: React.FC = () => {
                 >Services</FooterLinkAnchor>
               </FooterLink>
               <FooterLink variants={itemVariants}>
-                <FooterLinkAnchor 
+                <FooterLinkAnchor
                   href="#"
                   initial="hidden"
                   animate="visible"
@@ -174,7 +174,7 @@ const Footer: React.FC = () => {
                 >Projects</FooterLinkAnchor>
               </FooterLink>
               <FooterLink variants={itemVariants}>
-                <FooterLinkAnchor 
+                <FooterLinkAnchor
                   href="#"
                   initial="hidden"
                   animate="visible"
@@ -183,7 +183,7 @@ const Footer: React.FC = () => {
                 >About Us</FooterLinkAnchor>
               </FooterLink>
               <FooterLink variants={itemVariants}>
-                <FooterLinkAnchor 
+                <FooterLinkAnchor
                   href="#"
                   initial="hidden"
                   animate="visible"
@@ -194,16 +194,16 @@ const Footer: React.FC = () => {
             </FooterLinks>
             <FooterLinks variants={itemVariants}>
               <FooterLink variants={itemVariants}>
-                <FooterLinkAnchor 
-                  href="tel:+27333400302"
+                <FooterLinkAnchor
+                  href="tel:+27333470302"
                   initial="hidden"
                   animate="visible"
                   whileHover="hover"
                   transition={{ duration: 0.2 }}
-                >+27 (0)33 340 0302</FooterLinkAnchor>
+                >+27 (0)33 347 0302</FooterLinkAnchor>
               </FooterLink>
               <FooterLink variants={itemVariants}>
-                <FooterLinkAnchor 
+                <FooterLinkAnchor
                   href="mailto:info@afrilectrical.co.za"
                   initial="hidden"
                   animate="visible"
@@ -212,7 +212,7 @@ const Footer: React.FC = () => {
                 >info@afrilectrical.co.za</FooterLinkAnchor>
               </FooterLink>
               <FooterLink variants={itemVariants}>
-                <FooterLinkAnchor 
+                <FooterLinkAnchor
                   href="#"
                   initial="hidden"
                   animate="visible"
@@ -221,7 +221,7 @@ const Footer: React.FC = () => {
                 >Pietermaritzburg, KZN</FooterLinkAnchor>
               </FooterLink>
               <FooterLink variants={itemVariants}>
-                <FooterLinkAnchor 
+                <FooterLinkAnchor
                   href="#"
                   initial="hidden"
                   animate="visible"
@@ -232,8 +232,8 @@ const Footer: React.FC = () => {
             </FooterLinks>
           </FooterLinksContainer>
           <SocialLinks variants={itemVariants}>
-            <SocialLink 
-              href="#" 
+            <SocialLink
+              href="#"
               aria-label="LinkedIn"
               whileHover={socialVariants.hover}
               whileTap={{ scale: 0.9 }}
@@ -243,14 +243,14 @@ const Footer: React.FC = () => {
 
         <FooterBottom>
           <FooterLogo variants={itemVariants}>
-            <motion.svg 
-              width="24" 
-              height="24" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
+            <motion.svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
               strokeLinejoin="round"
               whileHover={{ scale: 1.05 }}
             >
