@@ -3,7 +3,8 @@ import styled, { keyframes } from 'styled-components';
 
 interface Client {
   name: string;
-  logo: string;
+  logo?: string;
+  badgeText?: string;
 }
 
 interface AutoScrollCarouselProps {
@@ -113,8 +114,33 @@ const Logo = styled.img`
   }
 `;
 
-const AutoScrollCarousel: React.FC<AutoScrollCarouselProps> = ({ 
-  clients, 
+const Badge = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  border: 2px solid ${({ theme }) => theme.colors.primary || '#0066cc'};
+  background: ${({ theme }) => theme.colors.white || '#fff'};
+  color: ${({ theme }) => theme.colors.primary || '#0066cc'};
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+  
+  &:hover {
+    opacity: 1;
+    background: ${({ theme }) => theme.colors.primary || '#0066cc'};
+    color: ${({ theme }) => theme.colors.white || '#fff'};
+    transform: scale(1.05);
+  }
+`;
+
+const AutoScrollCarousel: React.FC<AutoScrollCarouselProps> = ({
+  clients,
   title = "Strategic Partners & Certifications",
   subtitle = "We collaborate with industry leaders and maintain the highest standards through strategic partnerships and certifications."
 }) => {
@@ -137,10 +163,14 @@ const AutoScrollCarousel: React.FC<AutoScrollCarouselProps> = ({
           <LogoStrip>
             {duplicatedLogos.map((client, index) => (
               <LogoItem key={`${client.name}-${index}`}>
-                <Logo
-                  src={client.logo}
-                  alt={client.name}
-                />
+                {client.badgeText ? (
+                  <Badge>{client.badgeText}</Badge>
+                ) : (
+                  <Logo
+                    src={client.logo}
+                    alt={client.name}
+                  />
+                )}
               </LogoItem>
             ))}
           </LogoStrip>
