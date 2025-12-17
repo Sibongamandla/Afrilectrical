@@ -157,8 +157,7 @@ const HeroSection: React.FC = () => {
       backgroundImage="/media/images/stakeholder_meeting_substation_site.jpg"
       buttonText="Learn More"
       onButtonClick={() => window.location.href = '/about'}
-      overlayImage="https://lukhozi.co.za/wp-content/uploads/2019/01/BBBEE-LOGO.png"
-      overlayImageAlt="Level 1 BBBEE Contributor Badge"
+      badgeText="BBBEE Level 1 Compliant"
     />
   ];
 
