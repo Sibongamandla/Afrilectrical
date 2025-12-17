@@ -14,7 +14,8 @@ const ClientsContainer = styled.section`
 // Define interface for client data
 interface Client {
   name: string;
-  logo: string;
+  logo?: string;
+  badgeText?: string;
 }
 
 // Actual certifications and professional bodies AFRILECTRICAL is registered with
@@ -33,7 +34,7 @@ const clients: Client[] = [
   },
   {
     name: 'BBBEE Level 1 Contributor',
-    logo: 'https://lukhozi.co.za/wp-content/uploads/2019/01/BBBEE-LOGO.png'
+    badgeText: 'BBBEE Level 1 Contributor'
   },
 ];
 
