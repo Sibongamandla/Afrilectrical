@@ -831,7 +831,8 @@ const HeroSlide: React.FC<{
   onButtonClick?: () => void;
   overlayImage?: string;
   overlayImageAlt?: string;
-}> = ({ title, subtitle, description, backgroundImage, backgroundVideo, buttonText = "Explore Solutions", onButtonClick, overlayImage, overlayImageAlt }) => {
+  badgeText?: string;
+}> = ({ title, subtitle, description, backgroundImage, backgroundVideo, buttonText = "Explore Solutions", onButtonClick, overlayImage, overlayImageAlt, badgeText }) => {
   return (
     <div className="relative w-full h-full overflow-hidden">
       {/* Background video (if provided) */}
@@ -860,8 +861,8 @@ const HeroSlide: React.FC<{
       {/* Content container */}
       <div className="relative z-10 flex items-center h-full w-full">
         <div className="max-w-5xl mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          {/* Overlay Image (referenced by user) */}
-          {overlayImage && (
+          {/* Overlay Image or Text Badge */}
+          {overlayImage ? (
             <div className="mb-6 md:mb-8">
               <img
                 src={overlayImage}
@@ -869,7 +870,13 @@ const HeroSlide: React.FC<{
                 className="h-16 md:h-20 object-contain"
               />
             </div>
-          )}
+          ) : badgeText ? (
+            <div className="mb-6 md:mb-8">
+              <div className="inline-flex items-center justify-center px-4 py-2 border-2 border-primary-500 bg-primary-900/30 backdrop-blur-sm rounded text-white font-bold tracking-wider uppercase text-sm md:text-base">
+                {badgeText}
+              </div>
+            </div>
+          ) : null}
 
           {/* Subtitle with consistent sizing */}
           <div className="text-white text-sm sm:text-base md:text-lg font-medium mb-3 md:mb-4 opacity-90">
