@@ -12,7 +12,7 @@ const offices = [
     title: 'Pietermaritzburg',
     subtitle: 'Head Office',
     address: '27 Cascade Crescent, 3-ON Crescent Unit 19, Chasevalley, Pietermaritzburg 3201',
-    phone: '+27 (0)33 340 0302',
+    phone: '+27 (0)33 347 0302',
     mobile: '+27 (0)83 714 2529',
     email: 'info@afrilectrical.co.za',
     hours: 'Mon-Fri: 8:00-17:00',
@@ -53,7 +53,7 @@ const contactMethods = [
     icon: 'phone',
     title: 'Phone Support',
     description: 'Get immediate assistance from our technical experts',
-    contact: '+27 (0)33 340 0302',
+    contact: '+27 (0)33 347 0302',
     hours: 'Mon-Fri: 8:00-17:00 SAST'
   },
   {
@@ -331,7 +331,7 @@ const Contact: React.FC = () => {
                       </div>
                       <div>
                         <div className="font-medium text-gray-900">Phone</div>
-                        <div className="text-gray-600">+27 (0)33 340 0302</div>
+                        <div className="text-gray-600">+27 (0)33 347 0302</div>
                       </div>
                     </div>
 
