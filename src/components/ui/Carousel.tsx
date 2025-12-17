@@ -93,7 +93,7 @@ const CarouselContainer = styled.div<{ $transitionDuration: number }>`
   }
 `;
 
-const SlideContainer = styled.div<{ 
+const SlideContainer = styled.div<{
   $isDragging: boolean;
   $dragOffset: number;
   $transitionDuration: number;
@@ -104,7 +104,7 @@ const SlideContainer = styled.div<{
   height: 100%;
   cursor: ${({ $isDragging }) => $isDragging ? 'grabbing' : 'grab'};
   transform: translateX(${({ $dragOffset }) => $dragOffset}px);
-  transition: ${({ $isDragging, $transitionDuration, $easing }) => 
+  transition: ${({ $isDragging, $transitionDuration, $easing }) =>
     $isDragging ? 'none' : `transform ${$transitionDuration}ms ${$easing}`};
   
   &:active {
@@ -112,7 +112,7 @@ const SlideContainer = styled.div<{
   }
 `;
 
-const Slide = styled.div<{ 
+const Slide = styled.div<{
   $direction: number;
   $isActive: boolean;
   $transitionDuration: number;
@@ -386,7 +386,7 @@ const Carousel: React.FC<CarouselProps> = ({
   const slideRef = useRef<HTMLDivElement>(null);
   const announcementRef = useRef<HTMLDivElement>(null);
   const intersectionObserverRef = useRef<IntersectionObserver | null>(null);
-  
+
   // Memoized values for performance
   const totalSlides = useMemo(() => items.length, [items.length]);
   const canGoNext = useMemo(() => infiniteLoop || currentIndex < totalSlides - 1, [infiniteLoop, currentIndex, totalSlides]);
@@ -408,7 +408,7 @@ const Carousel: React.FC<CarouselProps> = ({
     if (preloadImages && !lazy) {
       setIsLoading(true);
       const imagePromises: Promise<void>[] = [];
-      
+
       items.forEach((_, index) => {
         const promise = new Promise<void>((resolve) => {
           // Simulate image loading - in real implementation, extract image URLs from items
@@ -419,7 +419,7 @@ const Carousel: React.FC<CarouselProps> = ({
         });
         imagePromises.push(promise);
       });
-      
+
       Promise.all(imagePromises).then(() => {
         setIsLoading(false);
         onLoad?.();
@@ -437,10 +437,10 @@ const Carousel: React.FC<CarouselProps> = ({
   // Enhanced navigation functions
   const handleNext = useCallback(() => {
     if (!canGoNext) return;
-    
+
     const nextIndex = infiniteLoop && currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
     const previousIndex = currentIndex;
-    
+
     setCurrentIndex([nextIndex, 1]);
     onChange?.(nextIndex);
     onSlideChange?.(nextIndex, previousIndex);
@@ -449,10 +449,10 @@ const Carousel: React.FC<CarouselProps> = ({
 
   const handlePrev = useCallback(() => {
     if (!canGoPrev) return;
-    
+
     const prevIndex = infiniteLoop && currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
     const previousIndex = currentIndex;
-    
+
     setCurrentIndex([prevIndex, -1]);
     onChange?.(prevIndex);
     onSlideChange?.(prevIndex, previousIndex);
@@ -463,7 +463,7 @@ const Carousel: React.FC<CarouselProps> = ({
     if (index !== currentIndex && index >= 0 && index < totalSlides) {
       const newDirection = index > currentIndex ? 1 : -1;
       const previousIndex = currentIndex;
-      
+
       setCurrentIndex([index, newDirection]);
       onChange?.(index);
       onSlideChange?.(index, previousIndex);
@@ -502,14 +502,14 @@ const Carousel: React.FC<CarouselProps> = ({
     if (isPlaying && !isPaused && !isDragging && items.length > 1) {
       setProgress(0);
       startTimeRef.current = Date.now();
-      
+
       const progressInterval = 16;
       progressTimerRef.current = setInterval(() => {
         const elapsed = Date.now() - startTimeRef.current;
         const newProgress = (elapsed / interval) * 100;
         setProgress(newProgress > 100 ? 100 : newProgress);
       }, progressInterval);
-      
+
       timerRef.current = setTimeout(() => {
         handleNext();
       }, interval);
@@ -517,7 +517,7 @@ const Carousel: React.FC<CarouselProps> = ({
       if (timerRef.current) clearTimeout(timerRef.current);
       if (progressTimerRef.current) clearInterval(progressTimerRef.current);
     }
-    
+
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
       if (progressTimerRef.current) clearInterval(progressTimerRef.current);
@@ -546,7 +546,7 @@ const Carousel: React.FC<CarouselProps> = ({
 
   const handleMouseUp = useCallback(() => {
     if (!isDragging || !dragStart) return;
-    
+
     const threshold = 50;
     if (Math.abs(dragOffset) > threshold) {
       if (dragOffset > 0) {
@@ -555,7 +555,7 @@ const Carousel: React.FC<CarouselProps> = ({
         handleNext();
       }
     }
-    
+
     setIsDragging(false);
     setDragStart(null);
     setDragOffset(0);
@@ -571,10 +571,10 @@ const Carousel: React.FC<CarouselProps> = ({
         setDragOffset(0);
         setTouchStartTime(0);
       };
-      
+
       document.addEventListener('mouseup', handleGlobalMouseUp);
       document.addEventListener('mouseleave', handleGlobalMouseUp);
-      
+
       return () => {
         document.removeEventListener('mouseup', handleGlobalMouseUp);
         document.removeEventListener('mouseleave', handleGlobalMouseUp);
@@ -585,50 +585,50 @@ const Carousel: React.FC<CarouselProps> = ({
   // Enhanced touch/drag handlers with improved gesture recognition
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
     if (!enableDrag) return;
-    
+
     const touch = e.touches[0];
     setIsDragging(true);
     setDragStart({ x: touch.clientX, y: touch.clientY });
     setDragOffset(0);
     setTouchStartTime(Date.now());
-    
+
     // Prevent default to avoid scrolling issues
     e.preventDefault();
   }, [enableDrag]);
 
   const handleTouchMove = useCallback((e: React.TouchEvent) => {
     if (!isDragging || !dragStart) return;
-    
+
     const touch = e.touches[0];
     const offset = touch.clientX - dragStart.x;
-    
+
     // Apply resistance at boundaries
     const resistance = 0.3;
     let adjustedOffset = offset;
-    
+
     if (!infiniteLoop) {
-      if ((currentIndex === 0 && offset > 0) || 
-          (currentIndex === totalSlides - 1 && offset < 0)) {
+      if ((currentIndex === 0 && offset > 0) ||
+        (currentIndex === totalSlides - 1 && offset < 0)) {
         adjustedOffset = offset * resistance;
       }
     }
-    
+
     setDragOffset(adjustedOffset);
     e.preventDefault();
   }, [isDragging, dragStart, enableDrag, currentIndex, totalSlides, infiniteLoop]);
 
   const handleTouchEnd = useCallback((e: React.TouchEvent) => {
     if (!isDragging || !dragStart) return;
-    
+
     setIsDragging(false);
     const touchDuration = Date.now() - touchStartTime;
     const velocity = Math.abs(dragOffset) / touchDuration;
-    
+
     // Dynamic threshold based on velocity and distance
     const baseThreshold = 50;
     const velocityThreshold = 0.3;
     const threshold = velocity > velocityThreshold ? baseThreshold * 0.6 : baseThreshold;
-    
+
     if (Math.abs(dragOffset) > threshold) {
       if (dragOffset > 0 && canGoPrev) {
         handlePrev();
@@ -636,7 +636,7 @@ const Carousel: React.FC<CarouselProps> = ({
         handleNext();
       }
     }
-    
+
     setDragStart(null);
     setDragOffset(0);
     setTouchStartTime(0);
@@ -670,9 +670,9 @@ const Carousel: React.FC<CarouselProps> = ({
       <CarouselContainer $transitionDuration={transitionDuration}>
         <EmptyState>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21,15 16,10 5,21"/>
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+            <circle cx="8.5" cy="8.5" r="1.5" />
+            <polyline points="21,15 16,10 5,21" />
           </svg>
           <p>No items to display</p>
         </EmptyState>
@@ -681,7 +681,7 @@ const Carousel: React.FC<CarouselProps> = ({
   }
 
   return (
-    <CarouselContainer 
+    <CarouselContainer
       className={className}
       $transitionDuration={transitionDuration}
       onMouseEnter={handleMouseEnter}
@@ -829,7 +829,9 @@ const HeroSlide: React.FC<{
   backgroundVideo?: string;
   buttonText?: string;
   onButtonClick?: () => void;
-}> = ({ title, subtitle, description, backgroundImage, backgroundVideo, buttonText = "Explore Solutions", onButtonClick }) => {
+  overlayImage?: string;
+  overlayImageAlt?: string;
+}> = ({ title, subtitle, description, backgroundImage, backgroundVideo, buttonText = "Explore Solutions", onButtonClick, overlayImage, overlayImageAlt }) => {
   return (
     <div className="relative w-full h-full overflow-hidden">
       {/* Background video (if provided) */}
@@ -854,25 +856,36 @@ const HeroSlide: React.FC<{
 
       {/* Brand gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-primary-900/70" />
-      
+
       {/* Content container */}
       <div className="relative z-10 flex items-center h-full w-full">
         <div className="max-w-5xl mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
+          {/* Overlay Image (referenced by user) */}
+          {overlayImage && (
+            <div className="mb-6 md:mb-8">
+              <img
+                src={overlayImage}
+                alt={overlayImageAlt || "Slide overlay image"}
+                className="h-16 md:h-20 object-contain"
+              />
+            </div>
+          )}
+
           {/* Subtitle with consistent sizing */}
           <div className="text-white text-sm sm:text-base md:text-lg font-medium mb-3 md:mb-4 opacity-90">
             {subtitle}
           </div>
-          
+
           {/* Main title with consistent sizing */}
           <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-6">
             {title}
           </h1>
-          
+
           {/* Description with consistent sizing */}
           <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-6 md:mb-8 max-w-3xl">
             {description}
           </p>
-          
+
           {/* Enhanced CTA Button */}
           <button
             onClick={onButtonClick}
@@ -880,7 +893,7 @@ const HeroSlide: React.FC<{
           >
             <span>{buttonText}</span>
             <svg className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none">
-              <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
         </div>
